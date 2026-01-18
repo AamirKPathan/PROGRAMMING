@@ -19,3 +19,13 @@ const mathInstance = new MathUtils();
 // console.log(mathInstance.add(5, 3)); // Error: mathInstance.add is not a function
 // console.log(mathInstance.pi); // undefined
 // Static methods and properties can be accessed directly through the class without creating an instance.
+
+class Circle {
+    constructor(radius) {
+        this.radius = radius;
+    }
+    static area(circle) {
+        return MathUtils.pi * circle.radius * circle.radius;
+    }
+}
+const circle1 = new Circle(5);
