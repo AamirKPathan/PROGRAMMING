@@ -118,4 +118,3 @@ const [firstNum, secondNum, thirdNum] = numSet;
 console.log(firstNum); // 10
 console.log(secondNum); // 20
 console.log(thirdNum); // 30
-// function 
