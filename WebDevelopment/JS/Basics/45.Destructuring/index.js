@@ -15,3 +15,70 @@ const [first, ...restColors] = colors; // rest operator
 console.log(first); // red
 console.log(restColors); // ['green', 'blue']
 // default values
+const [color1, color2, color3 = 'yellow', color4 = 'purple'] = colors;
+console.log(color3); // yellow
+console.log(color4); // purple
+// swapping variables
+let a = 1;
+let b = 2;
+[a, b] = [b, a];
+console.log(a); // 2
+console.log(b); // 1
+
+// object destructuring
+const person = {
+    name: 'Alice',
+    age: 28,
+    city: 'New York'
+};
+const { name, age, city } = person;
+console.log(name); // Alice
+console.log(age); // 28
+console.log(city); // New York
+// renaming variables
+const { name: fullName, age: yearsOld } = person;
+console.log(fullName); // Alice
+console.log(yearsOld); // 28
+// default values
+const { name: personName, country = 'USA' } = person;
+console.log(personName); // Alice
+console.log(country); // USA
+// nested object destructuring
+const employee = {
+    id: 101,
+    personalInfo: {
+        name: 'Bob',
+        position: 'Developer'
+    }
+};
+const { personalInfo: { name: empName, position } } = employee;
+console.log(empName); // Bob
+console.log(position); // Developer
+// function parameter destructuring
+function displayPerson({ name, age }) {
+    console.log(`Name: ${name}, Age: ${age}`);
+}
+displayPerson(person); // Name: Alice, Age: 28
+// array parameter destructuring
+function sum([x, y, z]) {
+    return x + y + z;
+}
+console.log(sum([1, 2, 3])); // 6
+// mixed destructuring
+const data = {
+    id: 1,
+    info: ['red', 'large', 'round']
+};
+const { id, info: [color, size, shape] } = data;
+console.log(id); // 1
+console.log(color); // red
+console.log(size); // large
+
+console.log(shape); // round
+// rest operator in object destructuring
+const { name: personName2, ...otherDetails } = person;
+console.log(personName2); // Alice
+console.log(otherDetails); // { age: 28, city: 'New York' }
+// destructuring in loops
+const people = [
+    { name: 'John', age: 30 },
