@@ -113,3 +113,9 @@ console.log(userId); // 1
 console.log(userName); // Charlie
 // destructuring with Sets
 
+const numSet = new Set([10, 20, 30]);
+const [firstNum, secondNum, thirdNum] = numSet;
+console.log(firstNum); // 10
+console.log(secondNum); // 20
+console.log(thirdNum); // 30
+// function 
