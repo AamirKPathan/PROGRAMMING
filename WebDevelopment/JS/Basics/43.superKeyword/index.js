@@ -1,1 +1,1 @@
-// super is used to call
+// super is used to call the constructor or access method
