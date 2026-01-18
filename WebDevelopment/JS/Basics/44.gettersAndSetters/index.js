@@ -1,5 +1,5 @@
-// getter = special method that makes a property read-only
-// setter = special method that allows you to 
+// getter = special method that makes a property readable
+// setter = special method that allows you to make a property writable
 class Rectangle {
     constructor(width, height) {
         this.width = width;
