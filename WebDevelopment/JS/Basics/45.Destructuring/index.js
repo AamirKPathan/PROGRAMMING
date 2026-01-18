@@ -82,3 +82,20 @@ console.log(otherDetails); // { age: 28, city: 'New York' }
 // destructuring in loops
 const people = [
     { name: 'John', age: 30 },
+    { name: 'Jane', age: 25 },
+    { name: 'Mike', age: 35 }
+];
+for (const { name, age } of people) {
+    console.log(`${name} is ${age} years old.`);
+}
+// John is 30 years old.
+// Jane is 25 years old.
+// Mike is 35 years old.
+// nested array destructuring
+const rgb = [255, [0, 128], 64];
+
+const [red, [green, blue]] = rgb;
+console.log(red); // 255
+console.log(green); // 0
+console.log(blue); // 128
+// default values in nested destructuring
