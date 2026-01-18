@@ -19,3 +19,27 @@ const average = numbers.reduce((accumulator, currentValue, index, array) => {
     return accumulator;
 }, 0);
 
+console.log(average); // 3
+const flattenedArray = [[1, 2], [3, 4], [5]].reduce((accumulator, currentValue) => accumulator.concat(currentValue), []);
+console.log(flattenedArray);
+// [1, 2, 3, 4, 5]
+const wordArray = ["Hello", " ", "World", "!"];
+const sentence = wordArray.reduce((accumulator, currentValue) => accumulator + currentValue, "");
+console.log(sentence); // "Hello World!"
+const charCount = sentence.reduce((accumulator, currentValue) => {
+    accumulator[currentValue] = (accumulator[currentValue] || 0) + 1;
+    return accumulator;
+}, {});
+console.log(charCount);
+// { H: 1, e: 1, l: 3, o: 2, ' ': 1, W: 1, r: 1, d: 1, '!': 1 }
+const factorial = (n) => {
+    return n <= 1 ? 1 : n * factorial(n - 1);
+};
+const factOf5 = factorial(5);
+console.log(factOf5); // 120
+const powersOfTwo = [1, 2, 3, 4, 5].reduce((accumulator, currentValue) => {
+    accumulator.push(2 ** currentValue);
+    return accumulator;
+}, []);
+console.log(powersOfTwo);
+// [2, 4, 8, 16, 32]
