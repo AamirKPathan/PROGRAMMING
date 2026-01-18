@@ -1,4 +1,4 @@
 // function declaration = define a resuable block of code that performs a specific task
 
-// function expression = a way to define a function
+// function expression = a way to define a function as values or variables
 
