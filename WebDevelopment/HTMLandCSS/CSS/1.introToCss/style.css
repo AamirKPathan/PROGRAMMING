@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+#p1{
+    color: red;
+}
+#p2{
+    color: orange;
+}
+#p3{
+    color: yellow;
+}
+#p4{
+    color: green;
+}
+.odd{
+    font-family: 'Courier New', Courier, monospace;
+}
+.even{
+    font-family: Arial, Helvetica, sans-serif;
+}

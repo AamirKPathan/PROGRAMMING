@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Conversion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌡️ Temperature Converter</h1>
+        <div class="converter">
+            <div class="input-group">
+                <label for="celsius">Celsius (°C)</label>
+                <input type="number" id="celsius" placeholder="Enter temperature" step="0.01">
+            </div>
+            
+            <div class="buttons">
+                <button class="convert-btn" onclick="convertFromCelsius()">Convert from °C</button>
+                <button class="convert-btn" onclick="convertFromFahrenheit()">Convert from °F</button>
+                <button class="convert-btn" onclick="convertFromKelvin()">Convert from K</button>
+                <button class="reset-btn" onclick="resetAll()">Reset</button>
+            </div>
+            
+            <div class="input-group">
+                <label for="fahrenheit">Fahrenheit (°F)</label>
+                <input type="number" id="fahrenheit" placeholder="Enter temperature" step="0.01">
+            </div>
+            
+            <div class="input-group">
+                <label for="kelvin">Kelvin (K)</label>
+                <input type="number" id="kelvin" placeholder="Enter temperature" step="0.01">
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>Conversion Formulas</h3>
+            <p>°F = (°C * 9/5) + 32</p>
+            <p>K = °C + 273.15</p>
+            <p>°C = (°F - 32) * 5/9</p>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

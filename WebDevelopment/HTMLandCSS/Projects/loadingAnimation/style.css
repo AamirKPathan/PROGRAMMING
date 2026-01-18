@@ -1,0 +1,92 @@
+body {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  perspective: 800px;
+  color: #0af;
+  font-family: Arial, sans-serif;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px; /* more spacing for dots */
+}
+
+/* 3D Cube */
+.cube {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  transform-style: preserve-3d;
+  animation: rotateCube 2.5s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #111;
+  border: 3px solid #0af;
+  box-shadow: 0 0 15px #0af;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #0af;
+}
+
+/* Position each face */
+.front  { transform: translateZ(35px); }
+.back   { transform: rotateY(180deg) translateZ(35px); }
+.right  { transform: rotateY(90deg) translateZ(35px); }
+.left   { transform: rotateY(-90deg) translateZ(35px); }
+.top    { transform: rotateX(90deg) translateZ(35px); }
+.bottom { transform: rotateX(-90deg) translateZ(35px); }
+
+@keyframes rotateCube {
+  0%   { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Loading row */
+.loading-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-direction: row-reverse;
+}
+
+/* Pulsing Dots */
+.dots {
+  display: flex;
+  gap: 12px;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  background: #0af;
+  border-radius: 50%;
+  animation: pulse 0.9s infinite ease-in-out;
+}
+
+.dots span:nth-child(2) { animation-delay: 0.15s; }
+.dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50%      { transform: scale(1.6); opacity: 1; }
+}
+
+/* Loading text */
+.loading-text {
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: #0af;
+  margin: 0;
+}

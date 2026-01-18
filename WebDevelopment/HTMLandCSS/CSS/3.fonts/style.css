@@ -1,0 +1,9 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+p {
+    font-family: "lucida console", "Courier New", monospace;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+}

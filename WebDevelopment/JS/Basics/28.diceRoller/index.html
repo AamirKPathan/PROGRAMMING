@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 Dice Roller</h1>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="numDice">Number of Dice:</label>
+                <input type="number" id="numDice" min="1" max="20" value="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="numSides">Sides per Die:</label>
+                <select id="numSides">
+                    <option value="4">D4 (4 sides)</option>
+                    <option value="6" selected>D6 (6 sides)</option>
+                    <option value="8">D8 (8 sides)</option>
+                    <option value="10">D10 (10 sides)</option>
+                    <option value="12">D12 (12 sides)</option>
+                    <option value="20">D20 (20 sides)</option>
+                    <option value="100">D100 (100 sides)</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="rollBtn" class="roll-button">Roll Dice</button>
+                <button id="resetBtn" class="reset-button">Reset</button>
+            </div>
+        </div>
+        
+        <div class="results-section">
+            <div id="individualRolls" class="rolls">
+                <h3>Individual Rolls:</h3>
+                <div class="rolls-list"></div>
+            </div>
+            <div id="totalResult" class="total">
+                <p class="label">Total Sum</p>
+                <p class="value">0</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+#myButton{
+    padding: 5px 25px;
+    font-size: 3em;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: hsl(177, 100%, 50%);
+}
+#myButton:hover{
+    background-color: hsl(177, 82%, 45%);
+    transition-duration: 0.3s;
+}
+#myLabel{
+    font-size: 3em;
+}
