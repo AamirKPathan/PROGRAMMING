@@ -29,3 +29,6 @@ class Circle {
     }
 }
 const circle1 = new Circle(5);
+console.log(Circle.area(circle1)); // 78.53975
+// The area method is static and can be called using the Circle class directly.
+// It takes an instance of Circle as an argument to calculate the area.
