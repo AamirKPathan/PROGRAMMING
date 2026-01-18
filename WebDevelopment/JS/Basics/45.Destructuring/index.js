@@ -99,3 +99,17 @@ console.log(red); // 255
 console.log(green); // 0
 console.log(blue); // 128
 // default values in nested destructuring
+const nestedArray = [1, [2]];
+const [num1, [num2, num3 = 3]] = nestedArray;
+console.log(num1); // 1
+console.log(num2); // 2
+console.log(num3); // 3
+// destructuring with Maps
+const userMap = new Map();
+userMap.set('id', 1);
+userMap.set('name', 'Charlie');
+const { id: userId, name: userName } = Object.fromEntries(userMap);
+console.log(userId); // 1
+console.log(userName); // Charlie
+// destructuring with Sets
+
