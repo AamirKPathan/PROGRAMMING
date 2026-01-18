@@ -1,5 +1,5 @@
 // getter = special method that makes a property read-only
-// setter = special method that allows you to set the value of a property
+// setter = special method that allows you to 
 class Rectangle {
     constructor(width, height) {
         this.width = width;
@@ -24,3 +24,8 @@ console.log(rect2.area); // 18
 rect2.area = 54;
 console.log(rect2.width); // 9
 console.log(rect2.height); // 6
+const rect3 = new Rectangle(2, 8);
+console.log(rect3.area); // 16
+rect3.area = 32;
+console.log(rect3.width); // 4
+console.log(rect3.height); // 8
