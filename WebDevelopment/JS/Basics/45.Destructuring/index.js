@@ -10,3 +10,8 @@ console.log(secondColor); // green
 console.log(thirdColor); // blue
 const [primary, , tertiary] = colors; // skip the second element
 console.log(primary); // red
+console.log(tertiary); // blue
+const [first, ...restColors] = colors; // rest operator
+console.log(first); // red
+console.log(restColors); // ['green', 'blue']
+// default values
