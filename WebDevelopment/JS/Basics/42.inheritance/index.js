@@ -19,3 +19,22 @@ const dog1 = new Dog('Rex');
 console.log(dog1.speak()); // Rex barks.
 // The Dog class inherits from the Animal class and overrides the speak method.
 class Cat extends
+    Animal {
+    speak() {
+        return `${this.name} meows.`;
+    }
+}
+const cat1 = new Cat('Whiskers');
+console.log(cat1.speak()); // Whiskers meows.
+// The Cat class also inherits from the Animal class and overrides the speak method.
+class Puppy extends Dog {
+    speak() {
+        return `${this.name} yaps.`;
+    }
+}
+const puppy1 = new Puppy('Buddy');
+console.log(puppy1.speak()); // Buddy yaps.
+// The Puppy class inherits from the Dog class and overrides the speak method.
+class Lion extends Animal {
+    speak() {
+        
