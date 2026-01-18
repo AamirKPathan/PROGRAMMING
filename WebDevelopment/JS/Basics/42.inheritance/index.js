@@ -37,4 +37,17 @@ console.log(puppy1.speak()); // Buddy yaps.
 // The Puppy class inherits from the Dog class and overrides the speak method.
 class Lion extends Animal {
     speak() {
-        
+        return `${this.name} roars.`;
+    }
+}
+const lion1 = new Lion('Simba');
+console.log(lion1.speak()); // Simba roars.
+// The Lion class inherits from the Animal class and overrides the speak method.
+class Tiger extends Animal {
+    speak() {
+        return `${this.name} growls.`;
+    }
+}
+const tiger1 = new Tiger('Shere Khan');
+console.log(tiger1.speak()); // Shere Khan growls.
+// The Tiger class inherits from the Animal class and overrides the speak method.
