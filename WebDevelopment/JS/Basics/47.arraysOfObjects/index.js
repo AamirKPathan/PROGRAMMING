@@ -6,3 +6,4 @@ const users = [
         email: "something@example.com"
     }
 ]
+console.log("First User's Name:", users[0].name); // Alice
