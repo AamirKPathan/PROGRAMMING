@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-5">
+        <h2 class="mb-4">Your Transaction History</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Type</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tx in transactions %}
+                <tr>
+                    <td>{{ tx.symbol }}</td>
+                    <td>{{ tx.shares }}</td>
+                    <td>{{ tx.price | usd }}</td>
+                    <td>{{ tx.type | capitalize }}</td>
+                    <td>{{ tx.timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

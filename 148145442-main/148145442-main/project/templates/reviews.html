@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Reviews for {{ seller }}</h2>
+    {% if feedback %}
+        <ul class="list-group">
+            {% for review in feedback %}
+                <li class="list-group-item">
+                    <strong>{{ review[0] }}</strong> rated <strong>{{ review[1] }}/5</strong><br>
+                    {{ review[2] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews yet for this seller.</p>
+    {% endif %}
+</div>
+{% endblock %}

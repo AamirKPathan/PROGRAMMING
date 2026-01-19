@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Admin Dashboard</h2>
+
+    <!-- Users -->
+    <h4 class="mt-4">Users</h4>
+    <ul class="list-group mb-4">
+        {% for user in users %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ user[1] }} ({{ user[2] }})
+                <a href="/admin/ban_user/{{ user[1] }}" class="btn btn-sm btn-danger">Ban</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Listings -->
+    <h4>Listings</h4>
+    {% for listing in listings %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>{{ listing[1] }}</h5>
+                <p>{{ listing[2] }}</p>
+                <p><strong>Category:</strong> {{ listing[3] }} | <strong>Price:</strong> ${{ listing[4] }} | <strong>Location:</strong> {{ listing[5] }}</p>
+                <p><strong>Seller:</strong> {{ listing[6] }}</p>
+                <div class="d-flex gap-2">
+                    {% if listing[8] == 0 %}
+                        <a href="/admin/approve_listing/{{ listing[0] }}" class="btn btn-success btn-sm">Approve</a>
+                    {% endif %}
+                    <a href="/admin/edit_listing/{{ listing[0] }}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/admin/delete_listing/{{ listing[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <!-- Reviews -->
+    <h4 class="mt-4">Reviews</h4>
+    {% for review in reviews %}
+        <div class="border p-2 mb-2">
+            <strong>{{ review[1] }}</strong> → <strong>{{ review[2] }}</strong>: {{ review[4] }} ({{ review[3] }}/5)
+            <a href="/admin/delete_review/{{ review[0] }}" class="btn btn-danger btn-sm float-end">Delete</a>
+        </div>
+    {% endfor %}
+
+    <!-- Reports -->
+    <h4 class="mt-4">Reported Content</h4>
+    {% if reports %}
+        {% for report in reports %}
+            <div class="border p-2 mb-2">
+                <strong>{{ report[1] }}</strong> reported a {{ report[2] }} (ID: {{ report[3] }})<br>
+                <em>{{ report[4] }}</em> <small class="text-muted">{{ report[5] }}</small>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No reports found.</p>
+    {% endif %}
+</div>
+{% endblock %}

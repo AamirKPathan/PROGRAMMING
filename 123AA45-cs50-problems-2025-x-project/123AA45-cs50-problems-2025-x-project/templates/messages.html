@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Your Inbox</h2>
+    {% if inbox %}
+        <ul class="list-group">
+            {% for msg in inbox %}
+                <li class="list-group-item">
+                    <strong>{{ msg[0] }}:</strong> {{ msg[1] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

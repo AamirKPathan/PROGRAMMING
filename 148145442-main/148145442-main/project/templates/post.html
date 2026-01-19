@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Post a New Listing</h2>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control" rows="4" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="category" class="form-select" required>
+                <option value="">Select Category</option>
+                <optgroup label="PC Parts">
+                    <option value="CPU">CPU</option>
+                    <option value="GPU">GPU</option>
+                    <option value="RAM">RAM</option>
+                    <option value="Motherboard">Motherboard</option>
+                    <option value="Storage">Storage</option>
+                    <option value="Power Supply">Power Supply</option>
+                </optgroup>
+                <optgroup label="Games">
+                    <option value="PC Game">PC Game</option>
+                    <option value="Console Game">Console Game</option>
+                </optgroup>
+                <optgroup label="Consoles">
+                    <option value="PlayStation">PlayStation</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="Nintendo">Nintendo</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price (CAD)</label>
+            <input type="number" name="price" class="form-control" step="0.01" required>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="location" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Post Listing</button>
+        <div class="mb-3">
+        <label class="form-label">Upload Image</label>
+        <input type="file" name="image" class="form-control">
+        </div>
+    </form>
+</div>
+{% endblock %}

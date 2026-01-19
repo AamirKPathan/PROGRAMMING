@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ user }}'s Profile</h2>
+
+    <h4 class="mt-4">Your Listings</h4>
+    {% if my_listings %}
+        {% for listing in my_listings %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ listing[1] }}</h5>
+                    <p class="card-text">{{ listing[2] }}</p>
+                    <p><strong>Category:</strong> {{ listing[3] }} | <strong>Price:</strong> ${{ listing[4] }} | <strong>Location:</strong> {{ listing[5] }}</p>
+                    <a href="/edit/{{ listing[0] }}" class="btn btn-warning btn-sm me-2">Edit</a>
+                    <a href="/delete/{{ listing[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>You haven't posted any listings yet.</p>
+    {% endif %}
+
+    <h4 class="mt-5">Your Messages</h4>
+    {% if inbox %}
+        <ul class="list-group">
+            {% for msg in inbox %}
+                <li class="list-group-item">
+                    <strong>{{ msg[0] }}:</strong> {{ msg[1] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Message {{ recipient }}</h2>
+    <form method="post">
+        <div class="mb-3">
+            <textarea name="content" class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+{% endblock %}

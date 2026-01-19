@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ category }} Listings</h2>
+    {% if listings %}
+        {% for listing in listings %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/listing/{{ listing[0] }}">{{ listing[1] }}</a>
+                    </h5>
+                    <p class="card-text">{{ listing[2] }}</p>
+                    <p><strong>Price:</strong> ${{ listing[4] }} | <strong>Location:</strong> {{ listing[5] }}</p>
+                    <p><strong>Category:</strong> {{ listing[3] }}</p>
+                    <p><em>Posted by {{ listing[6] }}</em></p>
+                    <a href="/message/{{ listing[6] }}" class="btn btn-outline-primary btn-sm mt-2">Contact Seller</a>
+                    <a href="/favorite/{{ listing[0] }}" class="btn btn-outline-success btn-sm mt-2">Add to Favorites</a>
+                    {% if listing[7] %}
+                        <img src="/static/uploads/{{ listing[7] }}" class="img-fluid mb-2" style="max-height: 200px;">
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No listings found in this category.</p>
+    {% endif %}
+</div>
+{% endblock %}

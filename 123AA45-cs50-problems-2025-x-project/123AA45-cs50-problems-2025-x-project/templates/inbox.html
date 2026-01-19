@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Your Messages</h2>
+    {% if threads %}
+        <ul class="list-group">
+            {% for thread in threads %}
+                {% set other = thread[1] if thread[1] != user else thread[2] %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>Chat with {{ other }}</span>
+                    <a href="/thread/{{ thread[0] }}" class="btn btn-sm btn-primary">Open</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No conversations yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

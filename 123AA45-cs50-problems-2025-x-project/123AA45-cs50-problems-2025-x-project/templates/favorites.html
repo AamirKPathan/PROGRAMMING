@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Your Favorites</h2>
+    {% if listings %}
+        <div class="row">
+            {% for listing in listings %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        {% if listing[7] %}
+                            <img src="{{ listing[7] }}" class="card-img-top" alt="Listing Image">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ listing[1] }}</h5>
+                            <p class="card-text">{{ listing[2] }}</p>
+                            <p><strong>Price:</strong> ${{ listing[4] }}</p>
+                            <p><strong>Location:</strong> {{ listing[5] }}</p>
+                            <p><strong>Seller:</strong> {{ listing[6] }}</p>
+                            <a href="/message/{{ listing[6] }}" class="btn btn-primary btn-sm">Message Seller</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>You haven't favorited any listings yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

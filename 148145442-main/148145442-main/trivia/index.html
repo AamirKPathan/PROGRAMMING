@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Multiple Choice Logic
+                const mcButtons = document.querySelectorAll(".mc-option");
+                const mcFeedback = document.getElementById("mc-feedback");
+
+                mcButtons.forEach(button => {
+                    button.addEventListener("click", function () {
+                        mcButtons.forEach(b => b.classList.remove("correct", "incorrect"));
+                        if (button.dataset.correct === "true") {
+                            button.classList.add("correct");
+                            mcFeedback.textContent = "Correct!";
+                        } else {
+                            button.classList.add("incorrect");
+                            mcFeedback.textContent = "Incorrect";
+                        }
+                    });
+                });
+
+                // Free Response Logic
+                const frButton = document.getElementById("fr-submit");
+                const frInput = document.getElementById("free-response");
+                const frFeedback = document.getElementById("fr-feedback");
+
+                frButton.addEventListener("click", function () {
+                    const answer = frInput.value.trim().toLowerCase();
+                    frInput.classList.remove("correct", "incorrect");
+
+                    if (answer === "canberra") {
+                        frInput.classList.add("correct");
+                        frFeedback.textContent = "Correct!";
+                    } else {
+                        frInput.classList.add("incorrect");
+                        frFeedback.textContent = "Incorrect";
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which element has the chemical symbol 'O'?</h3>
+                <button class="mc-option" data-correct="false">Gold</button>
+                <button class="mc-option" data-correct="true">Oxygen</button>
+                <button class="mc-option" data-correct="false">Osmium</button>
+                <p id="mc-feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the capital of Australia?</h3>
+                <input type="text" id="free-response">
+                <button id="fr-submit">Submit</button>
+                <p id="fr-feedback"></p>
+            </div>
+        </div>
+    </body>
+</html>

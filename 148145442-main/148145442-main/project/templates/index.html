@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Welcome, {{ session.user }}</h2>
+
+    <!-- Search Filters -->
+    <form method="get" action="/" class="row g-3 mb-4">
+        <div class="col-md-3">
+            <input type="text" name="keyword" class="form-control" placeholder="Keyword" value="{{ request.args.get('keyword', '') }}">
+        </div>
+        <div class="col-md-2">
+            <select name="category" class="form-select">
+                <option value="">Category</option>
+                <option value="Console">Console</option>
+                <option value="Accessory">Accessory</option>
+                <option value="Game">Game</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="number" name="min_price" class="form-control" placeholder="Min Price" value="{{ request.args.get('min_price', '') }}">
+        </div>
+        <div class="col-md-2">
+            <input type="number" name="max_price" class="form-control" placeholder="Max Price" value="{{ request.args.get('max_price', '') }}">
+        </div>
+        <div class="col-md-2">
+            <input type="text" name="location" class="form-control" placeholder="Location" value="{{ request.args.get('location', '') }}">
+        </div>
+        <div class="col-md-1">
+            <button type="submit" class="btn btn-primary w-100">Search</button>
+        </div>
+        <div class="col-md-3">
+            <select name="sort" class="form-select">
+                <option value="">Sort By</option>
+                <option value="newest">Newest</option>
+                <option value="price_low">Price: Low to High</option>
+                <option value="price_high">Price: High to Low</option>
+            </select>
+        </div>
+    </form>
+
+    <!-- Wishlist Input -->
+    <form method="post" action="/wishlist" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="keyword" class="form-control" placeholder="Add to wishlist (e.g. RTX 3080)" required>
+            <button type="submit" class="btn btn-outline-secondary">Add</button>
+        </div>
+    </form>
+
+    <!-- Category Browsing -->
+    <div class="mb-4">
+        <a href="/?category=Console" class="btn btn-outline-dark btn-sm me-2">Console</a>
+        <a href="/?category=Accessory" class="btn btn-outline-dark btn-sm me-2">Accessory</a>
+        <a href="/?category=Game" class="btn btn-outline-dark btn-sm me-2">Game</a>
+        <a href="/?category=Other" class="btn btn-outline-dark btn-sm">Other</a>
+    </div>
+
+    <!-- Listings -->
+    <h4>Latest Listings</h4>
+    {% if listings %}
+        <div class="row">
+            {% for listing in listings %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        {% if listing[7] %}
+                            <img src="{{ listing[7] }}" class="card-img-top" alt="Listing Image">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ listing[1] }}</h5>
+                            <p class="card-text">{{ listing[2] }}</p>
+                            <p><strong>Category:</strong> {{ listing[3] }}</p>
+                            <p><strong>Price:</strong> ${{ listing[4] }}</p>
+                            <p><strong>Location:</strong> {{ listing[5] }}</p>
+                            <p><strong>Seller:</strong> {{ listing[6] }}</p>
+                            {# Optional: Display seller rating if available #}
+                            {# <p><strong>Rating:</strong> {{ seller_rating[listing[6]] }}/5</p> #}
+                            <a href="/message/{{ listing[6] }}" class="btn btn-primary btn-sm">Message Seller</a>
+                            <a href="/favorite/{{ listing[0] }}" class="btn btn-outline-warning btn-sm mt-2">Favorite</a>
+                            <a href="/report/listing/{{ listing[0] }}" class="btn btn-outline-danger btn-sm mt-2">Report</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No listings found.</p>
+    {% endif %}
+</div>
+{% endblock %}
