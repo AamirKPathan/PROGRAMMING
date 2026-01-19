@@ -33,4 +33,11 @@ users.forEach((user, index) => {
 // User 2: Name=Bob, Age=34,
 //
 // Note: The email fields are empty in the output because the provided email addresses were placeholders.
-const fruits = [{nam}, {}, {}];
+const fruits = [{name: "Apple"}, {name: "Banana"}, {name: "Cherry"}];
+fruits.forEach((fruit, index) => {
+    console.log(`Fruit ${index + 1}: ${fruit.name}`);
+});
+// Output:
+// Fruit 1: Apple
+// Fruit 2: Banana
+
