@@ -9,6 +9,7 @@ const user = {
     },
     hobbies: ["reading", "traveling", "gaming"],
     contact: {
-        email: "something@example.com"
+        email: "something@example.com",
+        phone_number: "123-456-7890"
     }
 };
