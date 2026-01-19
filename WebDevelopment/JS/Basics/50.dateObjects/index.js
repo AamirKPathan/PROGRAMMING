@@ -35,3 +35,24 @@ console.log(`Difference between now and ${pastDate.toLocaleDateString()}: ${diff
 // convert date to ISO string
 const isoString = now.toISOString();
 console.log("ISO string representation:", isoString);
+// parse a date string
+const parsedDate = new Date(Date.parse('2023-03-15T12:00:00'));
+console.log("Parsed date:", parsedDate);
+// get the timestamp (milliseconds since January 1, 1970)
+const timestamp = now.getTime();
+console.log("Timestamp (milliseconds since Jan 1, 1970):", timestamp);
+// add days to a date
+function addDays(date, days) {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}
+const futureDate = addDays(now, 10);
+console.log("Date after adding 10 days:", futureDate);
+// subtract days from a date
+function subtractDays(date, days) {
+    const result = new Date(date);
+    result.setDate(result.getDate() - days);
+    return result;
+}
+const pastDateSubtracted = subtractDays(now, 10);
