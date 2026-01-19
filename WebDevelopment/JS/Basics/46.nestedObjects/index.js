@@ -13,3 +13,8 @@ const user = {
         phone_number: "123-456-7890"
     }
 };
+// Accessing nested object properties
+console.log("User's Name:", user.name); // John Doe
+console.log("User's City:", user.address.city); // Anytown
+console.log("User's Email:", user.contact.email); // something@example.com
+console.log("User's Phone Number:", user.contact.phone_number); // 123-456-7890
