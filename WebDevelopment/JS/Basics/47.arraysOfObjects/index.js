@@ -33,3 +33,4 @@ users.forEach((user, index) => {
 // User 2: Name=Bob, Age=34,
 //
 // Note: The email fields are empty in the output because the provided email addresses were placeholders.
+const fruits = [{nam}, {}, {}];
