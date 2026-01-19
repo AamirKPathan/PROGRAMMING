@@ -62,3 +62,17 @@ function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 }
 const testYear = 2024;
+console.log(`Is ${testYear} a leap year?`, isLeapYear(testYear));
+// get the day of the week
+const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const dayOfWeek = daysOfWeek[now.getDay()];
+console.log("Today is:", dayOfWeek);
+// set date to the last day of the month
+function getLastDayOfMonth(year, month) {
+    return new Date(year, month + 1, 0).getDate();
+}
+const lastDay = getLastDayOfMonth(2023, 1); // February 2023
+console.log("Last day of February 2023:", lastDay);
+// compare two dates
+function compareDates(date1, date2) {
+    
