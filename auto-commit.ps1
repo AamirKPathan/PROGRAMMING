@@ -1,15 +1,18 @@
 $dir = "c:\Users\gamin\OneDrive\Desktop\Programming"
+$lastCommitTime = Get-Date
+
 while ($true) {
     try {
-        cd $dir
-        $status = git status --porcelain 2>$null
+        Set-Location $dir
+        $status = & git status --porcelain
         if ($status) {
-            git add . 2>$null
+            & git add .
             $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-            git commit -m "Auto-commit: $timestamp" 2>$null
+            & git commit -m "Auto-commit: $timestamp"
+            $lastCommitTime = Get-Date
         }
     } catch {
-        # Silently continue on error
+        Write-Error $_
     }
-    Start-Sleep -Seconds 10
+    Start-Sleep -Seconds 5
 }
