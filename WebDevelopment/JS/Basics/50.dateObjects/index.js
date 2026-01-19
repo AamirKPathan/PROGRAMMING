@@ -18,3 +18,15 @@ console.log(`Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
 // format the date as a string
 const formattedDate = now.toLocaleString();
 console.log("Formatted date and time:", formattedDate);
+// set a specific date
+const anotherDate = new Date();
+anotherDate.setFullYear(2023);
+anotherDate.setMonth(0); // January
+anotherDate.setDate(1);
+anotherDate.setHours(0);
+anotherDate.setMinutes(0);
+anotherDate.setSeconds(0);
+console.log("Another specific date and time:", anotherDate);
+// calculate the difference between two dates
+const pastDate = new Date('2020-01-01T00:00:00');
+const diffInMilliseconds = now - pastDate;
