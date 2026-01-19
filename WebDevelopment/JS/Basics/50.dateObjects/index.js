@@ -30,3 +30,4 @@ console.log("Another specific date and time:", anotherDate);
 // calculate the difference between two dates
 const pastDate = new Date('2020-01-01T00:00:00');
 const diffInMilliseconds = now - pastDate;
+const diffInDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
