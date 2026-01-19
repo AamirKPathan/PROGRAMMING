@@ -56,3 +56,9 @@ function subtractDays(date, days) {
     return result;
 }
 const pastDateSubtracted = subtractDays(now, 10);
+console.log("Date after subtracting 10 days:", pastDateSubtracted);
+// check if a year is a leap year
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+const testYear = 2024;
