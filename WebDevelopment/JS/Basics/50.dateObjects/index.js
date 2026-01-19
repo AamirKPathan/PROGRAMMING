@@ -75,4 +75,14 @@ const lastDay = getLastDayOfMonth(2023, 1); // February 2023
 console.log("Last day of February 2023:", lastDay);
 // compare two dates
 function compareDates(date1, date2) {
-    
+    if (date1 < date2) return -1;
+    if (date1 > date2) return 1;
+    return 0;
+}
+const comparisonResult = compareDates(new Date('2023-01-01'), new Date('2022-12-31'));
+console.log("Comparison result between 2023-01-01 and 2022-12-31:", comparisonResult);
+// output:
+// Current date and time: [current date and time]
+// Specific date and time: 2022-12-25T10:30:00.000Z
+// Year: [current year], Month: [current month], Day: [current day]
+// Hours: [current hours], Minutes: [current minutes], Seconds: [current seconds]
