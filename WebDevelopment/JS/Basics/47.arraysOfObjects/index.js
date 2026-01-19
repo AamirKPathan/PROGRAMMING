@@ -40,4 +40,10 @@ fruits.forEach((fruit, index) => {
 // Output:
 // Fruit 1: Apple
 // Fruit 2: Banana
-
+// Fruit 3: Cherry
+const products = [
+    {id: 1, name: "Laptop", price: 999.99},
+    {id: 2, name: "Smartphone", price: 499.99},
+    {id: 3, name: "Tablet", price: 299.99}
+];
+products.forEach(product => {
