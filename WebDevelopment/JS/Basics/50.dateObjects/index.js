@@ -86,3 +86,15 @@ console.log("Comparison result between 2023-01-01 and 2022-12-31:", comparisonRe
 // Specific date and time: 2022-12-25T10:30:00.000Z
 // Year: [current year], Month: [current month], Day: [current day]
 // Hours: [current hours], Minutes: [current minutes], Seconds: [current seconds]
+// Formatted date and time: [formatted current date and time]
+// Another specific date and time: 2023-01-01T00:00:00.000Z
+// Difference between now and 1/1/2020: [number of days] days
+// ISO string representation: [ISO string of current date and time]
+// Parsed date: 2023-03-15T12:00:00.000Z
+// Timestamp (milliseconds since Jan 1, 1970): [timestamp]
+// Date after adding 10 days: [date after adding 10 days]
+// Date after subtracting 10 days: [date after subtracting 10 days]
+// Is 2024 a leap year? true
+// Today is: [current day of the week]
+// Last day of February 2023: 28
+// Comparison result between 2023-01-01 and 2022-12-31: 1
