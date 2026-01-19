@@ -47,3 +47,10 @@ const products = [
     {id: 3, name: "Tablet", price: 299.99}
 ];
 products.forEach(product => {
+    console.log(`Product ID: ${product.id}, Name: ${product.name}, Price: $${product.price}`);
+}
+);
+// Output:
+// Product ID: 1, Name: Laptop, Price: $999.99
+// Product ID: 2, Name: Smartphone, Price: $499.99
+// Product ID: 3, Name: Tablet, Price: $299.99
