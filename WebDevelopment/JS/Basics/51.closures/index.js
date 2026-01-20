@@ -59,4 +59,10 @@ const add5 = makeAdder(5);
 const add10 = makeAdder(10);
 console.log(add5(2)); // 7
 console.log(add10(2)); // 12
-
+console.log(add5(10)); // 15
+console.log(add10(10)); // 20
+//here, makeAdder creates functions that add a specific value to their argument
+//the value of x is remembered by the returned function
+//this allows us to create specialized functions easily
+//closures are a powerful feature of JavaScript that enable data encapsulation and function factories
+//understanding closures is essential for mastering JavaScript and writing efficient, maintainable code
