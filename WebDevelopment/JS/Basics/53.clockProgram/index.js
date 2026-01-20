@@ -1,4 +1,8 @@
-let is24Hour = false; // default: 12-hour mode
+let is24Hour = false;
+let alarmTime = null;
+let alarmActive = false;
+
+const alarmSound = document.getElementById("alarmSound");
 
 function updateClock() {
   const now = new Date();
@@ -24,17 +28,64 @@ function updateClock() {
 
   const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
   document.getElementById("date").textContent = now.toLocaleDateString(undefined, options);
+
+  checkAlarm(now);
+}
+
+function checkAlarm(now) {
+  if (!alarmActive || !alarmTime) return;
+
+  const current = now.toTimeString().slice(0, 5);
+
+  if (current === alarmTime) {
+    alarmSound.play();
+    alert("⏰ Alarm ringing!");
+    alarmActive = false;
+    document.getElementById("alarmStatus").textContent = "Alarm finished";
+  }
 }
 
 document.getElementById("toggleFormat").addEventListener("click", () => {
   is24Hour = !is24Hour;
 
-  const btn = document.getElementById("toggleFormat");
-  btn.textContent = is24Hour
-    ? "Switch To 12 Hour Format"
-    : "Switch To 24 Hour Format";
+  document.getElementById("toggleFormat").textContent =
+    is24Hour ? "Switch To 12 Hour Format" : "Switch To 24 Hour Format";
 
   updateClock();
+});
+
+document.getElementById("toggleTheme").addEventListener("click", () => {
+  const body = document.body;
+  body.classList.toggle("light");
+  body.classList.toggle("dark");
+
+  document.getElementById("toggleTheme").textContent =
+    body.classList.contains("light")
+      ? "Switch To Dark Theme"
+      : "Switch To Light Theme";
+});
+
+document.getElementById("setAlarm").addEventListener("click", () => {
+  const input = document.getElementById("alarmTime").value;
+
+  if (!input) {
+    alert("Please select a time first.");
+    return;
+  }
+
+  alarmTime = input;
+  alarmActive = true;
+
+  document.getElementById("alarmStatus").textContent = `Alarm set for ${alarmTime}`;
+});
+
+document.getElementById("clearAlarm").addEventListener("click", () => {
+  alarmActive = false;
+  alarmTime = null;
+  alarmSound.pause();
+  alarmSound.currentTime = 0;
+
+  document.getElementById("alarmStatus").textContent = "No alarm set";
 });
 
 updateClock();
