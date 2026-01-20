@@ -31,3 +31,18 @@ const counter2 = makeCounter();
 console.log(counter2()); // 1
 console.log(counter1()); // 3
 console.log(counter2()); // 2
+//closures are useful for data privacy
+function createPerson(name, age) {
+    return {
+        getName: function() {
+            return name;
+        },
+        getAge: function() {
+            return age;
+        }
+    }
+}
+const person = createPerson('Alice', 30);
+console.log(person.getName()); // Alice
+console.log(person.getAge()); // 30
+console.log(person.name); // undefined
