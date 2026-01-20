@@ -1,92 +1,61 @@
-let is24Hour = false;
-let alarmTime = null;
-let alarmActive = false;
+let startTime = 0;
+let elapsedTime = 0;
+let interval = null;
 
-const alarmSound = document.getElementById("alarmSound");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+const millisecondsEl = document.getElementById("milliseconds");
+const lapList = document.getElementById("lapList");
 
-function updateClock() {
-  const now = new Date();
+document.getElementById("startBtn").addEventListener("click", start);
+document.getElementById("pauseBtn").addEventListener("click", pause);
+document.getElementById("lapBtn").addEventListener("click", lap);
+document.getElementById("resetBtn").addEventListener("click", reset);
 
-  let hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
-
-  let ampm = "";
-
-  if (!is24Hour) {
-    ampm = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12 || 12;
-    document.getElementById("ampm").style.display = "inline";
-  } else {
-    document.getElementById("ampm").style.display = "none";
-  }
-
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-  document.getElementById("ampm").textContent = ampm;
-
-  const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
-  document.getElementById("date").textContent = now.toLocaleDateString(undefined, options);
-
-  checkAlarm(now);
+function start() {
+  if (interval) return;
+  startTime = Date.now() - elapsedTime;
+  interval = setInterval(update, 10);
 }
 
-function checkAlarm(now) {
-  if (!alarmActive || !alarmTime) return;
-
-  const current = now.toTimeString().slice(0, 5);
-
-  if (current === alarmTime) {
-    alarmSound.play();
-    alert("⏰ Alarm ringing!");
-    alarmActive = false;
-    document.getElementById("alarmStatus").textContent = "Alarm finished";
-  }
+function pause() {
+  clearInterval(interval);
+  interval = null;
 }
 
-document.getElementById("toggleFormat").addEventListener("click", () => {
-  is24Hour = !is24Hour;
+function reset() {
+  clearInterval(interval);
+  interval = null;
+  elapsedTime = 0;
+  updateDisplay(0, 0, 0);
+  lapList.innerHTML = "";
+}
 
-  document.getElementById("toggleFormat").textContent =
-    is24Hour ? "Switch To 12 Hour Format" : "Switch To 24 Hour Format";
+function lap() {
+  if (!interval) return;
 
-  updateClock();
-});
+  const now = elapsedTime;
+  const mins = Math.floor(now / 60000);
+  const secs = Math.floor((now % 60000) / 1000);
+  const ms = now % 1000;
 
-document.getElementById("toggleTheme").addEventListener("click", () => {
-  const body = document.body;
-  body.classList.toggle("light");
-  body.classList.toggle("dark");
+  const li = document.createElement("li");
+  li.textContent = `${String(mins).padStart(2, "0")} : ${String(secs).padStart(2, "0")} : ${String(ms).padStart(3, "0")}`;
+  lapList.appendChild(li);
+}
 
-  document.getElementById("toggleTheme").textContent =
-    body.classList.contains("light")
-      ? "Switch To Dark Theme"
-      : "Switch To Light Theme";
-});
+function update() {
+  elapsedTime = Date.now() - startTime;
 
-document.getElementById("setAlarm").addEventListener("click", () => {
-  const input = document.getElementById("alarmTime").value;
+  const mins = Math.floor(elapsedTime / 60000);
+  const secs = Math.floor((elapsedTime % 60000) / 1000);
+  const ms = elapsedTime % 1000;
 
-  if (!input) {
-    alert("Please select a time first.");
-    return;
-  }
+  updateDisplay(mins, secs, ms);
+}
 
-  alarmTime = input;
-  alarmActive = true;
-
-  document.getElementById("alarmStatus").textContent = `Alarm set for ${alarmTime}`;
-});
-
-document.getElementById("clearAlarm").addEventListener("click", () => {
-  alarmActive = false;
-  alarmTime = null;
-  alarmSound.pause();
-  alarmSound.currentTime = 0;
-
-  document.getElementById("alarmStatus").textContent = "No alarm set";
-});
-
-updateClock();
-setInterval(updateClock, 1000);
+function updateDisplay(mins, secs, ms) {
+  minutesEl.textContent = String(mins).padStart(2, "0");
+  secondsEl.textContent = String(secs).padStart(2, "0");
+  millisecondsEl.textContent = String(ms).padStart(3, "0");
+}
