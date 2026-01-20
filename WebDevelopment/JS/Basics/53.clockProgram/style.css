@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+.clock {
+    display: flex;
+    font-size: 5rem;
+    background: #3b3f47;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.clock div {
+    margin: 0 10px;
+}
+#ampm {
+    font-size: 3rem;
+    align-self: flex-end;
+    margin-left: 10px;
+}
