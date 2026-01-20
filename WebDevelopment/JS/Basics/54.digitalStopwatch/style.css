@@ -10,63 +10,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.4s, color 0.4s;
-}
-
-/* DARK THEME */
-body.dark {
   background: radial-gradient(circle at top, #2b5876, #1b1b2f);
   color: #f5f5f5;
 }
 
-/* LIGHT THEME */
-body.light {
-  background: #f0f0f0;
-  color: #222;
-}
-
-.clock-container {
+.stopwatch-container {
   text-align: center;
   padding: 30px 40px;
   border-radius: 20px;
   background: rgba(10, 10, 25, 0.85);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
-  transition: background 0.4s;
+  width: 350px;
 }
 
-body.light .clock-container {
-  background: rgba(255, 255, 255, 0.8);
+.display {
+  font-size: 3rem;
+  margin: 20px 0;
+  letter-spacing: 0.1em;
 }
 
-.clock {
-  font-size: 4rem;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-}
-
-.separator {
-  margin: 0 0.1em;
-  color: #00e5ff;
-  animation: blink 1s steps(1) infinite;
-}
-
-#ampm {
-  font-size: 1.2rem;
-  margin-left: 0.5em;
-  color: #ffeb3b;
-}
-
-.date {
-  margin-top: 12px;
-  font-size: 1rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-button {
-  margin-top: 15px;
+.buttons button {
+  margin: 10px 5px;
   padding: 10px 20px;
   font-size: 1rem;
   border: none;
@@ -77,30 +42,23 @@ button {
   transition: 0.3s;
 }
 
-button:hover {
+.buttons button:hover {
   background: #00bcd4;
 }
 
-.alarm-box {
+.laps {
   margin-top: 20px;
+  text-align: left;
 }
 
-.alarm-box input {
-  padding: 8px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 10px;
+.laps ul {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
-#alarmStatus {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+.laps li {
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
