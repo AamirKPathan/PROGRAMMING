@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Clock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <div class="clock-container">
+    <div class="clock">
+      <span id="hours">00</span>
+      <span class="separator">:</span>
+      <span id="minutes">00</span>
+      <span class="separator">:</span>
+      <span id="seconds">00</span>
+      <span id="ampm">AM</span>
+    </div>
+
+    <div class="date" id="date"></div>
+
+    <button id="toggleFormat">Switch To 24 Hour Format</button>
+    <button id="toggleTheme">Switch To Light Theme</button>
+
+    <div class="alarm-box">
+      <h3>Alarm</h3>
+      <input type="time" id="alarmTime">
+      <button id="setAlarm">Set Alarm</button>
+      <button id="clearAlarm">Clear Alarm</button>
+      <p id="alarmStatus">No alarm set</p>
+    </div>
+  </div>
+
+  <audio id="alarmSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+
+  <script src="index.js"></script>
+</body>
+</html>
