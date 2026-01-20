@@ -66,3 +66,7 @@ console.log(add10(10)); // 20
 //this allows us to create specialized functions easily
 //closures are a powerful feature of JavaScript that enable data encapsulation and function factories
 //understanding closures is essential for mastering JavaScript and writing efficient, maintainable code
+//practice using closures to get comfortable with their behavior and applications
+//try creating your own functions that utilize closures for various tasks
+//experiment with different scenarios to see how closures can enhance your code
+//happy coding!
