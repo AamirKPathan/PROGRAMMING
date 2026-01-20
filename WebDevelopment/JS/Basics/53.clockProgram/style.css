@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 body {
@@ -10,8 +10,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* DARK THEME */
+body.dark {
   background: radial-gradient(circle at top, #2b5876, #1b1b2f);
   color: #f5f5f5;
+}
+
+/* LIGHT THEME */
+body.light {
+  background: #f0f0f0;
+  color: #222;
 }
 
 .clock-container {
@@ -19,15 +30,17 @@ body {
   padding: 30px 40px;
   border-radius: 20px;
   background: rgba(10, 10, 25, 0.85);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(0, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
+  transition: background 0.4s;
+}
+
+body.light .clock-container {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .clock {
   font-size: 4rem;
-  letter-spacing: 0.1em;
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -50,11 +63,10 @@ body {
   font-size: 1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #cfd8dc;
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 10px 20px;
   font-size: 1rem;
   border: none;
@@ -68,3 +80,12 @@ button {
 button:hover {
   background: #00bcd4;
 }
+
+.alarm-box {
+  margin-top: 20px;
+}
+
+.alarm-box input {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius
