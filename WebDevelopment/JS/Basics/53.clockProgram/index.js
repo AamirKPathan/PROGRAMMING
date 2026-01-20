@@ -21,3 +21,4 @@ function updateClock() {
 updateClock();
 // update every second
 setInterval(updateClock, 1000);
+
