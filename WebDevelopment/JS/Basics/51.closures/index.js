@@ -50,10 +50,3 @@ console.log(person.age); // undefined
 //the name and age variables are private and cannot be accessed directly
 //only through the provided methods
 //closures can also be used to create function factories
-function makeAdder(x) {
-    return function(y) {
-        return x + y;
-    }
-}
-const add5 = makeAdder(5);
-const add10 = makeAdder(10);
