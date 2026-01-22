@@ -25,3 +25,20 @@ asyncOperation.then((message) => {
     console.log(message);
 });
 console.log("Promise Example End");
+
+// Example Of Asynchronous code with 3 tasks
+console.log("Asynchronous Tasks Start");
+function task(name, duration) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(`${name} completed`);
+            resolve();
+        }, duration);
+    });
+}
+async function runTasks() {
+    await task("Task 1", 2000);
+    await task("Task 2", 1000);
+    await task("Task 3", 1500);
+    console.log("All tasks completed");
+}
