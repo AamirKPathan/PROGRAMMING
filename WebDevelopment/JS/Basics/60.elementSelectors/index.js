@@ -13,3 +13,4 @@
 // const firstMatch = document.querySelector('.myClass');
 // const allMatches = document.querySelectorAll('div.myClass');
 // These selectors are essential for manipulating the DOM and creating dynamic web pages.
+// Example of element selectors in action is provided in the accompanying HTML file.
