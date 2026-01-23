@@ -4,4 +4,11 @@
 const myBox = document.getElementById('myBox');
 const myButton = document.getElementById('myButton');
 
-myb
+myBox.addEventListener('click', event => {
+    event.target.style.backgroundColor = 'tomato';
+    event.target.textContent = 'Ouch🤕';
+});
+myBox.addEventListener('mouseover', event => {
+    event.target.style.backgroundColor = 'ye';
+    event.target.textContent = 'Mouse is over me!';
+});
