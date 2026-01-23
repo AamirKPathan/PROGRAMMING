@@ -12,3 +12,13 @@ myElement.innerHTML = 'Hello, DOM!';
 myElement.style.color = 'blue';
 // Add a new element to the DOM
 const newElement = document.createElement('p');
+newElement.innerHTML = 'This is a new paragraph added to the DOM.';
+document.body.appendChild(newElement);
+// Remove an element from the DOM
+const elementToRemove = document.getElementById('elementToRemove');
+document.body.removeChild(elementToRemove);
+// This code demonstrates basic DOM manipulation using JavaScript.
+// You can select, modify, add, and remove elements from the web page dynamically.
+// Note: To see the effects of this code, it should be run in the context of a web page with appropriate HTML elements.
+
+// Example HTML structure for context:
