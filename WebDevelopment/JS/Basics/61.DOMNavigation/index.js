@@ -3,6 +3,6 @@
 // It allows developers to traverse parent, child, and sibling relationships
 // between nodes in the DOM.
 // Common DOM Navigation Properties and Methods:
-// 1. parentNode: Accesses the parent node of a specified element.
-// 2. childNodes: Returns a collection of child nodes of a specified element.
-
+// 1. firsElementChild: Accesses the first child element of a parent node.
+// 2. lastElementChild: Accesses the last child element of a parent node.
+// 3. next: Accesses the parent element of a specified node.
