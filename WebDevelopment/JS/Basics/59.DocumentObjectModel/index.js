@@ -26,6 +26,7 @@ document.body.removeChild(elementToRemove);
 //    - html
 //       - head
 //          - title
+//            - Text
 //   
 //       - body
 //          - h1
