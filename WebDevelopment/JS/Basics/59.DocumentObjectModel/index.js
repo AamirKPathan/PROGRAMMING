@@ -21,4 +21,4 @@ document.body.removeChild(elementToRemove);
 // You can select, modify, add, and remove elements from the web page dynamically.
 // Note: To see the effects of this code, it should be run in the context of a web page with appropriate HTML elements.
 
-// Example HTML structure for context:
+// Example Of DOM File Tree
