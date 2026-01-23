@@ -18,3 +18,8 @@ const nextSibling = firstChild.nextElementSibling;
 const previousSibling = lastChild.previousElementSibling;
 const parentElement = firstChild.parentElement;
 const children = parent.children;
+console.log(firstChild, lastChild, nextSibling, previousSibling, parentElement, children);
+// This code demonstrates how to navigate through the DOM tree
+// using various properties to access related elements.
+// DOM Navigation is essential for dynamic web applications,
+// allowing developers to manipulate the structure and content of web pages effectively.
