@@ -8,3 +8,13 @@
 // 3. nextElementSibling: Accesses the next sibling element of a specified node.
 // 4. previousElementSibling: Accesses the previous sibling element of a specified node.
 // 5. parentElement: Accesses the parent element of a specified node.
+// 6. children: Returns a live HTMLCollection of child elements of a specified node.
+
+// Example Usage:
+const parent = document.getElementById('parent');
+const firstChild = parent.firstElementChild;
+const lastChild = parent.lastElementChild;
+const nextSibling = firstChild.nextElementSibling;
+const previousSibling = lastChild.previousElementSibling;
+const parentElement = firstChild.parentElement;
+const children = parent.children;
