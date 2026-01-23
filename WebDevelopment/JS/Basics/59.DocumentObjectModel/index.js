@@ -22,3 +22,8 @@ document.body.removeChild(elementToRemove);
 // Note: To see the effects of this code, it should be run in the context of a web page with appropriate HTML elements.
 
 // Example Of DOM File Tree
+// - document
+//    - html
+//       - head
+
+//       - body
