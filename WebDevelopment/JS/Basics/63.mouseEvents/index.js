@@ -15,4 +15,4 @@ myBox.addEventListener('mouseover', event => {
 myBox.addEventListener('mouseout', event => {
     event.target.style.backgroundColor = 'lightblue';
     event.target.textContent = 'Click Me😎';
-}   );
+});
