@@ -30,4 +30,6 @@ document.body.removeChild(elementToRemove);
 //       - body
 //          - h1
 //              - Text
-//          - p
+//          - <a>
+//              - href
+//              - Text
