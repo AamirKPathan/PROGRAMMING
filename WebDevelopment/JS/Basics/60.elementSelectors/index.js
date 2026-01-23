@@ -17,3 +17,11 @@
 const changeTextButton = document.getElementById('change-text-btn');
 const hideButtons = document.getElementsByClassName('hide-btn');
 const descriptionParagraph = document.querySelector('.description');
+changeTextButton.addEventListener('click', () => {
+    descriptionParagraph.textContent = 'The text has been changed!';
+});
+Array.from(hideButtons).forEach(button => {
+    button.addEventListener('click', () => {
+        descriptionParagraph.style.display = 'none';
+    });
+});
