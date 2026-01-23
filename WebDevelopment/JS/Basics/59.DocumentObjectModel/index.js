@@ -28,4 +28,5 @@ document.body.removeChild(elementToRemove);
 //          - title
 //   
 //       - body
-//          - title 
+//          - h1
+//          - p
