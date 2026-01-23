@@ -13,3 +13,6 @@ myBox.addEventListener('mouseover', event => {
     event.target.textContent = 'Don\'t do it!😱';
 });
 myBox.addEventListener('mouseout', event => {
+    event.target.style.backgroundColor = 'lightblue';
+    event.target.textContent = 'Click Me😎';
+}   );
