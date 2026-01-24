@@ -8,7 +8,7 @@ const images = [
         caption: "Supermarine Spitfire – Famous for its speed, agility, and elliptical wings, it became an icon of British air power."
     },
     {
-        src: "messerchmitt109.jpg",
+        src: "messerschmitt109.jpg",
         caption: "Messerschmitt Bf 109 – Germany’s primary fighter aircraft, known for its powerful engine and high performance."
     }
 ];
