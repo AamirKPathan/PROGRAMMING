@@ -1,1 +1,1 @@
-// Promis -
+// Promise = an object that manages asynchronous operations in JavaScript
