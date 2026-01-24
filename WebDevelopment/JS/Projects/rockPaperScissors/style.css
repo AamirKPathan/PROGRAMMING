@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #1e1e1e;
+    color: white;
+    padding: 40px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.choices {
+    margin-bottom: 30px;
+}
+
+.choice {
+    font-size: 20px;
+    padding: 15px 25px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    transition: 0.2s;
+}
+
+.choice:hover {
+    background: #555;
+}
+
+.results {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.scoreboard {
+    margin-top: 40px;
+    padding: 20px;
+    background: #2a2a2a;
+    border-radius: 10px;
+    width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scoreboard h2 {
+    margin-bottom: 10px;
+}
+
+#reset-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #444;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#reset-btn:hover {
+    background: #666;
+}
