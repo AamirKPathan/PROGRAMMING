@@ -34,3 +34,32 @@ h1 {
     margin-top: 20px;
     font-size: 22px;
 }
+
+.scoreboard {
+    margin-top: 40px;
+    padding: 20px;
+    background: #2a2a2a;
+    border-radius: 10px;
+    width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scoreboard h2 {
+    margin-bottom: 10px;
+}
+
+#reset-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #444;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#reset-btn:hover {
+    background: #666;
+}
