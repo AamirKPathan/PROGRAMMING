@@ -25,4 +25,6 @@ myPromise
         console.log("Promise has been settled."); // Always runs
     });
 // DO THESE CHORES IN ORDER
-// 1. Walk The 
+// 1. Walk The Dog
+// 2 . Wash The Car
+/
