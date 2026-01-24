@@ -1,27 +1,35 @@
-// classList = Element property in JavaScript
-// It returns the class names of an element as a DOMTokenList object
-// It has methods to add, remove, toggle, and check for classes on an element
+const buttons = document.querySelectorAll(".choice");
+const playerChoiceText = document.getElementById("player-choice");
+const computerChoiceText = document.getElementById("computer-choice");
+const resultText = document.getElementById("result-text");
 
-// add()
-// remove()
-// toggle()
-// contains()
-//replace()
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const playerChoice = button.dataset.choice;
+        const computerChoice = getComputerChoice();
+        const result = getWinner(playerChoice, computerChoice);
 
-const element = document.querySelector('.my-element');
-console.log('Initial class list:', element.classList);
-// Adding a class
-element.classList.add('new-class');
-console.log('After adding new-class:', element.classList);
-// Removing a class
-element.classList.remove('old-class');
-console.log('After removing old-class:', element.classList);
-// Toggling a class
-element.classList.toggle('toggle-class');
-console.log('After toggling toggle-class:', element.classList);
-// Checking if a class exists
-const hasClass = element.classList.contains('some-class');
-console.log('Contains some-class:', hasClass);
-// Replacing a class
-element.classList.replace('old-class', 'replaced-class');
-console.log('After replacing old-class with replaced-class:', element.classList);
+        playerChoiceText.textContent = playerChoice;
+        computerChoiceText.textContent = computerChoice;
+        resultText.textContent = result;
+    });
+});
+
+function getComputerChoice() {
+    const choices = ["rock", "paper", "scissors"];
+    return choices[Math.floor(Math.random() * 3)];
+}
+
+function getWinner(player, computer) {
+    if (player === computer) return "It's a tie!";
+
+    if (
+        (player === "rock" && computer === "scissors") ||
+        (player === "paper" && computer === "rock") ||
+        (player === "scissors" && computer === "paper")
+    ) {
+        return "You win!";
+    }
+
+    return "You lose!";
+}
