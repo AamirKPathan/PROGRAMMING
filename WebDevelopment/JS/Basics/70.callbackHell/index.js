@@ -37,3 +37,13 @@ function thirdCallback() {
         }, 1000);
     });
 }
+firstCallback()
+    .then(() => secondCallback())
+    .then(() => thirdCallback());
+// Example using async/await:
+async function executeCallbacks() {
+    await firstCallback();
+    await secondCallback();
+    await thirdCallback();
+}
+executeCallbacks();
