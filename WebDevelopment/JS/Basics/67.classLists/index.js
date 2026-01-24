@@ -19,3 +19,9 @@ console.log('After removing old-class:', element.classList);
 // Toggling a class
 element.classList.toggle('toggle-class');
 console.log('After toggling toggle-class:', element.classList);
+// Checking if a class exists
+const hasClass = element.classList.contains('some-class');
+console.log('Contains some-class:', hasClass);
+// Replacing a class
+element.classList.replace('old-class', 'replaced-class');
+console.log('After replacing old-class with replaced-class:', element.classList);
