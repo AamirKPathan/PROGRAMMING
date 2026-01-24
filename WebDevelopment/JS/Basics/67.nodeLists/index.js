@@ -1,1 +1,1 @@
-// NodeList = Static collection of HTML elements byu
+// NodeList = Static collection of HTML elements by (id, class, tag name etc)
