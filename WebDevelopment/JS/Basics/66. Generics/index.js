@@ -1,1 +1,0 @@
-// generics is a concept where u can write a cl
