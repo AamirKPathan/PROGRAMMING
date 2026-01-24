@@ -1,74 +1,34 @@
-// Score variables
-let wins = 0;
-let losses = 0;
-let ties = 0;
-
-// DOM elements
-const buttons = document.querySelectorAll(".choice");
-const playerChoiceText = document.getElementById("player-choice");
-const computerChoiceText = document.getElementById("computer-choice");
-const resultText = document.getElementById("result-text");
-
-const winsText = document.getElementById("wins");
-const lossesText = document.getElementById("losses");
-const tiesText = document.getElementById("ties");
-
-const resetBtn = document.getElementById("reset-btn");
-
-// Button click events
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const playerChoice = button.dataset.choice;
-        const computerChoice = getComputerChoice();
-        const result = getWinner(playerChoice, computerChoice);
-
-        playerChoiceText.textContent = playerChoice;
-        computerChoiceText.textContent = computerChoice;
-        resultText.textContent = result;
-
-        updateScore(result);
-    });
-});
-
-// Random computer choice
-function getComputerChoice() {
-    const choices = ["rock", "paper", "scissors"];
-    return choices[Math.floor(Math.random() * choices.length)];
-}
-
-// Determine winner
-function getWinner(player, computer) {
-    if (player === computer) return "It's a tie!";
-
-    if (
-        (player === "rock" && computer === "scissors") ||
-        (player === "paper" && computer === "rock") ||
-        (player === "scissors" && computer === "paper")
-    ) {
-        return "You win!";
+const images = [
+    {
+        src: "hawkerHurricane.jpg",
+        caption: "Hawker Hurricane – A rugged British fighter that formed the backbone of the RAF during the Battle of Britain."
+    },
+    {
+        src: "spitfire.jpg",
+        caption: "Supermarine Spitfire – Famous for its speed, agility, and elliptical wings, it became an icon of British air power."
+    },
+    {
+        src: "messerchmitt109.jpg",
+        caption: "Messerschmitt Bf 109 – Germany’s primary fighter aircraft, known for its powerful engine and high performance."
     }
+];
 
-    return "You lose!";
-}
+let currentIndex = 0;
 
-// Update scoreboard
-function updateScore(result) {
-    if (result === "You win!") wins++;
-    else if (result === "You lose!") losses++;
-    else ties++;
+const imgElement = document.getElementById("slider-img");
+const captionElement = document.getElementById("caption");
 
-    winsText.textContent = wins;
-    lossesText.textContent = losses;
-    tiesText.textContent = ties;
-}
-
-// Reset scoreboard
-resetBtn.addEventListener("click", () => {
-    wins = 0;
-    losses = 0;
-    ties = 0;
-
-    winsText.textContent = wins;
-    lossesText.textContent = losses;
-    tiesText.textContent = ties;
+document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateSlider();
 });
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateSlider();
+});
+
+function updateSlider() {
+    imgElement.src = images[currentIndex].src;
+    captionElement.textContent = images[currentIndex].caption;
+}
