@@ -15,4 +15,7 @@ async function getData() {
     console.log("Fetching data...");
     const data = await fetchData();
     console.log(data);
-}   
+}
+getData();
+
+// In this example, the getData function is declared as async. Inside it, we use await to wait for the fetchData Promise to resolve before logging the fetched data. This makes the code easier to read and understand compared to using .then() chains.
