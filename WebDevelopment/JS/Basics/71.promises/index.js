@@ -24,4 +24,5 @@ myPromise
     .finally(() => {
         console.log("Promise has been settled."); // Always runs
     });
-// 
+// DO THESE CHORES IN ORDER
+// 1. Walk The 
