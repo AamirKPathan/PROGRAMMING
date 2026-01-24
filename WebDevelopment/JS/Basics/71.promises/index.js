@@ -67,3 +67,4 @@ async function doChores() {
     await mowTheLawn();
     console.log("All chores are done!");
 }
+doChores();
