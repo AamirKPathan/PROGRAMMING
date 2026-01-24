@@ -3,4 +3,9 @@
 // It has methods to add, remove, toggle, and check for classes on an element
 
 // add()
-// remove(*)
+// remove()
+// toggle()
+// contains()
+//replace()
+
+const element = document.querySelector('.my-element');
