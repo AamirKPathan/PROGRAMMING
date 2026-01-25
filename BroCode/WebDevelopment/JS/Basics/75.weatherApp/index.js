@@ -56,6 +56,7 @@ function displayWeatherInfo(data){
 
     cityDisplay.textContent = city;
     tempDisplay.textContent = `${(temp-273.15).toFixed(1)}°C`
+    humidityDisplay.textContent = `hum`
 
     cityDisplay.classList.add("cityDisplay");
     tempDisplay.classList.add("tempDisplay");
