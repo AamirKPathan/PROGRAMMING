@@ -13,7 +13,6 @@ body {
   color: white;
 }
 
-/* App card */
 .app {
   background: rgba(0, 0, 0, 0.4);
   padding: 30px;
@@ -23,7 +22,7 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-input {
+input, button {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
@@ -33,13 +32,8 @@ input {
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
   background: #00b4d8;
   color: white;
-  font-size: 16px;
   cursor: pointer;
 }
 
@@ -47,42 +41,26 @@ button:hover {
   background: #0096c7;
 }
 
-h1 {
-  margin: 10px 0;
-  font-size: 28px;
-}
-
 .temp {
   font-size: 40px;
   font-weight: bold;
 }
 
+.temp button {
+  width: auto;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
 .desc {
   text-transform: capitalize;
-  margin-bottom: 10px;
 }
 
-/* 🌤 Weather themes */
-.clear {
-  background: linear-gradient(to bottom, #56ccf2, #2f80ed);
-}
-
-.clouds {
-  background: linear-gradient(to bottom, #757f9a, #d7dde8);
-}
-
-.rain {
-  background: linear-gradient(to bottom, #373b44, #4286f4);
-}
-
-.snow {
-  background: linear-gradient(to bottom, #83a4d4, #b6fbff);
-}
-
-.thunderstorm {
-  background: linear-gradient(to bottom, #141e30, #243b55);
-}
-
-.mist {
-  background: linear-gradient(to bottom, #606c88, #3f4c6b);
-}
+/* Weather themes */
+.clear { background: linear-gradient(to bottom, #56ccf2, #2f80ed); }
+.clouds { background: linear-gradient(to bottom, #757f9a, #d7dde8); }
+.rain { background: linear-gradient(to bottom, #373b44, #4286f4); }
+.snow { background: linear-gradient(to bottom, #83a4d4, #b6fbff); }
+.thunderstorm { background: linear-gradient(to bottom, #141e30, #243b55); }
+.mist { background: linear-gradient(to bottom, #606c88, #3f4c6b); }
