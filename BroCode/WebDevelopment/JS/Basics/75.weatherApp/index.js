@@ -55,7 +55,7 @@ function displayWeatherInfo(data){
     const weatherEmoji = document.createElement("p");
 
     cityDisplay.textContent = city;
-    tempDisplay.textContent = `${temp}°°`
+    tempDisplay.textContent = `${temp}°K`
 
     cityDisplay.classList.add("cityDisplay")
 
