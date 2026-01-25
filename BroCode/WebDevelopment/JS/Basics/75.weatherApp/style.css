@@ -61,5 +61,5 @@ p{
 .cityDisplay, .tempDisplay{
     font-size: 3.5rem;
     font-weight: bold;
-    color: hsla(hue, saturation, lightness);
+    color: hsla(0, 0%, 0%);
 }
