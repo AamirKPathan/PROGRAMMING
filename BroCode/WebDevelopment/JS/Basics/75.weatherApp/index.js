@@ -54,7 +54,9 @@ function displayWeatherInfo(data){
     const descDisplay = document.createElement("p");
     const weatherEmoji = document.createElement("p");
 
-    cityDisplay.textCo
+    cityDisplay.textContent = city;
+
+    card.appen
 }
 
 function getWeatherEmoji(weatherId){
