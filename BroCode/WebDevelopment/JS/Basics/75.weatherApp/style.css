@@ -28,12 +28,12 @@ button[type="submit"]{
     font-weight: bold;
     font-size: 2rem;
     background-color: hsl(122, 39%, 50%);
-    columns: white;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 
 }
 button[type="submit"]:hover{
-    
+
 }
