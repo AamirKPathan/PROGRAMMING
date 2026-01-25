@@ -8,4 +8,8 @@ weatherForm.addEventListener("submit", event => {
 
 });
 
-async f
+async function getWeatherData(city){
+
+}
+
+function displayW
