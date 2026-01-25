@@ -47,7 +47,8 @@ function displayWeatherInfo(data){
 
     card.textContent = "";
     card.style.display = "flex";
-    
+
+    const cityDisplay = document.createElement("h1");
 }
 
 function getWeatherEmoji(weatherId){
