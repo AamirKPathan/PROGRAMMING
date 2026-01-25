@@ -11,7 +11,12 @@ weatherForm.addEventListener("submit", event => {
     const city = cityInput.value;
 
     if(city){
+        try{
 
+        }
+        catch(error){
+
+        }
     }
     else{
         displayError("Please enter a city")
