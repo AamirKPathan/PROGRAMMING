@@ -1,4 +1,4 @@
-const apiKey = "YOUR_OPENWEATHERMAP_API_KEY"; // Replace with your actual key
+const apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
 const getWeatherBtn = document.getElementById("getWeather");
 const cityInput = document.getElementById("cityInput");
 const weatherCard = document.getElementById("weatherCard");
@@ -22,6 +22,7 @@ getWeatherBtn.addEventListener("click", async () => {
     displayWeather(data);
   } catch (err) {
     weatherCard.innerHTML = `<p>Error: ${err.message}</p>`;
+    weatherCard.className = "card";
     weatherCard.classList.remove("hidden");
   }
 });
@@ -30,9 +31,14 @@ function displayWeather(data) {
   const tempC = data.main.temp;
   const tempF = (tempC * 9/5 + 32).toFixed(1);
   const humidity = data.main.humidity;
+  const pressure = data.main.pressure;
+  const wind = data.wind.speed;
   const condition = data.weather[0].description;
   const icon = data.weather[0].icon;
   const location = data.name;
+
+  const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+  const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
 
   const temp = isCelsius ? `${tempC.toFixed(1)}°C` : `${tempF}°F`;
 
@@ -46,6 +52,10 @@ function displayWeather(data) {
     <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${condition}" />
     <p><strong>Temperature:</strong> ${temp}</p>
     <p><strong>Humidity:</strong> ${humidity}%</p>
+    <p><strong>Pressure:</strong> ${pressure} hPa</p>
+    <p><strong>Wind Speed:</strong> ${wind} m/s</p>
     <p><strong>Condition:</strong> ${condition}</p>
+    <p><strong>Sunrise:</strong> ${sunrise}</p>
+    <p><strong>Sunset:</strong> ${sunset}</p>
   `;
 }
