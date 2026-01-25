@@ -58,6 +58,7 @@ function displayWeatherInfo(data){
     tempDisplay.textContent = `${temp}°K`
 
     cityDisplay.classList.add("cityDisplay")
+    tempDisplay.classList.add("")
 
     card.appendChild(cityDisplay);
 }
