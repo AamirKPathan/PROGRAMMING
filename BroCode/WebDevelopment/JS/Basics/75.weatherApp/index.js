@@ -8,7 +8,11 @@ weatherForm.addEventListener("submit", event => {
 
     event.preventDefault();
 
-    const city = cityInput.val
+    const city = cityInput.value;
+
+    if(city){
+        
+    }
 
 });
 
