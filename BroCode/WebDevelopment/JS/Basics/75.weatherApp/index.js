@@ -12,11 +12,11 @@ weatherForm.addEventListener("submit", event => {
 
     if(city){
         try{
-
+            constw
         }
         catch(error){
             console.error(error);
-            
+            displayError(error);
         }
     }
     else{
