@@ -4,7 +4,7 @@ const cityInput = document.querySelector(".cityInput")
 const card = document.querySelector(".card")
 const apiKey = "36b9c3d5978540f659c374378104b089";
 
-weatherForm.addEventListener("submit", event => {
+weatherForm.addEventListener("submit", async event => {
 
     event.preventDefault();
 
@@ -12,7 +12,7 @@ weatherForm.addEventListener("submit", event => {
 
     if(city){
         try{
-            constw
+            const weatherData = await getWeatherData(city);
         }
         catch(error){
             console.error(error);
