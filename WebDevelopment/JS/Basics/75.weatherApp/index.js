@@ -1,4 +1,5 @@
-const apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+// IMPORTANT: put your real OpenWeatherMap API key here
+const apiKey = "REPLACE_WITH_YOUR_REAL_API_KEY";
 
 const getWeatherBtn = document.getElementById("getWeather");
 const cityInput = document.getElementById("cityInput");
@@ -7,30 +8,52 @@ const unitToggle = document.getElementById("unitToggle");
 
 let isCelsius = true;
 
+// Toggle °C / °F
 unitToggle.addEventListener("change", () => {
   isCelsius = !unitToggle.checked;
 });
 
-getWeatherBtn.addEventListener("click", async () => {
-  const city = cityInput.value.trim();
-  if (!city) return;
+// Click button
+getWeatherBtn.addEventListener("click", () => {
+  fetchWeather();
+});
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+// Press Enter in input
+cityInput.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    fetchWeather();
+  }
+});
+
+async function fetchWeather() {
+  const city = cityInput.value.trim();
+  if (!city) {
+    showError("Please enter a city name.");
+    return;
+  }
+
+  const url =
+    `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
 
   try {
     const res = await fetch(url);
     const data = await res.json();
 
-    if (data.cod !== 200) throw new Error(data.message);
+    if (data.cod !== 200) {
+      throw new Error(data.message || "Unable to fetch weather.");
+    }
 
     displayWeather(data);
-
   } catch (err) {
-    weatherCard.className = "card";
-    weatherCard.innerHTML = `<p>Error: ${err.message}</p>`;
-    weatherCard.classList.remove("hidden");
+    showError(`Error: ${err.message}`);
   }
-});
+}
+
+function showError(msg) {
+  weatherCard.className = "card";
+  weatherCard.innerHTML = `<p>${msg}</p>`;
+  weatherCard.classList.remove("hidden");
+}
 
 function displayWeather(data) {
   const tempC = data.main.temp;
@@ -58,7 +81,6 @@ function displayWeather(data) {
   else if (c.includes("fog") || c.includes("mist") || c.includes("haze")) theme = "fog";
 
   weatherCard.className = `card ${theme}`;
-
   weatherCard.innerHTML = `
     <h2>${location}</h2>
     <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${condition}" />
@@ -70,4 +92,5 @@ function displayWeather(data) {
     <p><strong>Sunrise:</strong> ${sunrise}</p>
     <p><strong>Sunset:</strong> ${sunset}</p>
   `;
+  weatherCard.classList.remove("hidden");
 }
