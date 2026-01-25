@@ -35,5 +35,7 @@ function displayError(message){
 
     const errorDisplay = document.createElement("p");
     errorDisplay.textContent = message;
-    errorDisplay.classList.add("error")
+    errorDisplay.classList.add("errorDisplay");
+    
+    card.textContent = 
 }
