@@ -13,7 +13,8 @@ body {
   text-align: center;
   background: white;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 14px;
+  width: 350px;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
@@ -24,6 +25,7 @@ body {
 input {
   padding: 0.5rem;
   font-size: 1rem;
+  width: 150px;
 }
 
 button {
@@ -86,24 +88,32 @@ input:checked + .slider:before {
 .card {
   padding: 1rem;
   border-radius: 12px;
-  background: linear-gradient(to bottom, #2196f3, #ffeb3b);
   color: #333;
   margin-top: 1rem;
   transition: background 0.5s ease;
 }
 
-.card.sunny {
+.hidden {
+  display: none;
+}
+
+/* THEMES */
+.sunny {
   background: linear-gradient(to bottom, #fdd835, #ff9800);
 }
 
-.card.cloudy {
+.cloudy {
   background: linear-gradient(to bottom, #90a4ae, #cfd8dc);
 }
 
-.card.rainy {
+.rainy {
   background: linear-gradient(to bottom, #4fc3f7, #0288d1);
 }
 
-.hidden {
-  display: none;
+.snow {
+  background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
+}
+
+.fog {
+  background: linear-gradient(to bottom, #cfd8dc, #eceff1);
 }
