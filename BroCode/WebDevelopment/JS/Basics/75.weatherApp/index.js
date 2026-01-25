@@ -38,5 +38,6 @@ function displayError(message){
     errorDisplay.classList.add("errorDisplay");
     
     card.textContent = ""
-    card.computedStyleMap
+    card.style.display = "flex";
+    card
 }
