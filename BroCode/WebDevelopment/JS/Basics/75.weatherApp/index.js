@@ -34,5 +34,5 @@ function getWeatherEmoji(weatherId){
 function displayError(message){
 
     const errorDisplay = document.createElement("p");
-    errorDisplay.textContent = me
+    errorDisplay.textContent = message;
 }
