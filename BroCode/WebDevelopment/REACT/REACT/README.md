@@ -1,4 +1,5 @@
 # React Learning — BroCode Course Setup
+https://www.youtube.com/watch?v=CgkZ7MvWUAA
 
 This directory contains my complete React learning environment for following the BroCode React tutorial series. The structure keeps every lesson and project organized, modular, and easy to run.
 
