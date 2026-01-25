@@ -76,7 +76,7 @@ function displayWeatherInfo(data){
 function getWeatherEmoji(weatherId){
     switch(true){
         case(weatherId >= 200 && weatherId < 300):
-            return ""
+            return "⛈️"
     }
 }
 
