@@ -16,6 +16,10 @@ function displayWeatherInfo(data){
 
 }
 
-function getWeatherEmoji(){
-    
+function getWeatherEmoji(weatherId){
+
+}
+
+function displayError(message){
+
 }
