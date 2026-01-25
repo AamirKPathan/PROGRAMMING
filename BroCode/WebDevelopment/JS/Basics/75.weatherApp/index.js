@@ -41,7 +41,7 @@ async function getWeatherData(city){
 }
 
 function displayWeatherInfo(data){
-
+console.log(data);
 }
 
 function getWeatherEmoji(weatherId){
