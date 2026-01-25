@@ -1,4 +1,5 @@
 const apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+
 const getWeatherBtn = document.getElementById("getWeather");
 const cityInput = document.getElementById("cityInput");
 const weatherCard = document.getElementById("weatherCard");
@@ -15,14 +16,18 @@ getWeatherBtn.addEventListener("click", async () => {
   if (!city) return;
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
   try {
     const res = await fetch(url);
     const data = await res.json();
+
     if (data.cod !== 200) throw new Error(data.message);
+
     displayWeather(data);
+
   } catch (err) {
-    weatherCard.innerHTML = `<p>Error: ${err.message}</p>`;
     weatherCard.className = "card";
+    weatherCard.innerHTML = `<p>Error: ${err.message}</p>`;
     weatherCard.classList.remove("hidden");
   }
 });
@@ -30,9 +35,11 @@ getWeatherBtn.addEventListener("click", async () => {
 function displayWeather(data) {
   const tempC = data.main.temp;
   const tempF = (tempC * 9/5 + 32).toFixed(1);
+
   const humidity = data.main.humidity;
   const pressure = data.main.pressure;
   const wind = data.wind.speed;
+
   const condition = data.weather[0].description;
   const icon = data.weather[0].icon;
   const location = data.name;
@@ -43,10 +50,15 @@ function displayWeather(data) {
   const temp = isCelsius ? `${tempC.toFixed(1)}°C` : `${tempF}°F`;
 
   let theme = "sunny";
-  if (condition.includes("cloud")) theme = "cloudy";
-  else if (condition.includes("rain")) theme = "rainy";
+  const c = condition.toLowerCase();
+
+  if (c.includes("cloud")) theme = "cloudy";
+  else if (c.includes("rain")) theme = "rainy";
+  else if (c.includes("snow")) theme = "snow";
+  else if (c.includes("fog") || c.includes("mist") || c.includes("haze")) theme = "fog";
 
   weatherCard.className = `card ${theme}`;
+
   weatherCard.innerHTML = `
     <h2>${location}</h2>
     <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${condition}" />
