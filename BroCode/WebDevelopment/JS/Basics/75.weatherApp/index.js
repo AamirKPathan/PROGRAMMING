@@ -60,6 +60,7 @@ function displayWeatherInfo(data){
 
     cityDisplay.classList.add("cityDisplay");
     tempDisplay.classList.add("tempDisplay");
+    humidityDisplay.classLis
 
     card.appendChild(cityDisplay);
     card.appendChild(tempDisplay);
@@ -80,4 +81,3 @@ function displayError(message){
     card.textContent = ""
     card.style.display = "flex";
     card.appendChild(errorDisplay);
-}
