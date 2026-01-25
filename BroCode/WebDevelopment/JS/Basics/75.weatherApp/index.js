@@ -52,7 +52,9 @@ function displayWeatherInfo(data){
     const tempDisplay = document.createElement("p");
     const humidityDisplay = document.createElement("p");
     const descDisplay = document.createElement("p");
-    const weatherEmoji = document.createElement("h");
+    const weatherEmoji = document.createElement("p");
+
+    cityDisplay.textCo
 }
 
 function getWeatherEmoji(weatherId){
