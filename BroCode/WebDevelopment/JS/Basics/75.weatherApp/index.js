@@ -55,13 +55,13 @@ function displayWeatherInfo(data){
     const weatherEmoji = document.createElement("p");
 
     cityDisplay.textContent = city;
-    tempDisplay.textContent = `${temp}°K`
+    tempDisplay.textContent = `${temp-273.15}°C`
 
     cityDisplay.classList.add("cityDisplay");
     tempDisplay.classList.add("tempDisplay");
 
     card.appendChild(cityDisplay);
-    card.appendChi
+    card.appendChild(tempDisplay);
 
     card.appendChild(cityDisplay);
 }
