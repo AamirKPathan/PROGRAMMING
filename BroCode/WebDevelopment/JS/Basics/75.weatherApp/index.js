@@ -34,7 +34,7 @@ async function getWeatherData(city){
 
     console.log(response)
     if(!response.ok){
-        throw
+        throw new Error("Could not fetch weah")
     }
 }
 
