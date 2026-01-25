@@ -12,4 +12,8 @@ async function getWeatherData(city){
 
 }
 
-function displayW
+function displayWeatherInfo(data){
+
+}
+
+function
