@@ -34,8 +34,10 @@ async function getWeatherData(city){
 
     console.log(response)
     if(!response.ok){
-        throw new Error("Could not fetch weah")
+        throw new Error("Could not fetch weather data")
     }
+
+    return await res
 }
 
 function displayWeatherInfo(data){
