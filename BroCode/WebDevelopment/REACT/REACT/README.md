@@ -35,3 +35,17 @@ This setup allows me to:
 
 Inside the inner `REACT` folder (the Vite project):
 
+npm run dev
+
+
+The browser will open automatically.
+
+---
+
+## 🧭 Selecting Lessons or Projects
+
+Inside `src/lessonSelector.js`:
+
+```js
+export const currentLesson = 1;     // 1–20 for Basics
+export const currentProject = "";   // "colorPickerApp", etc.
