@@ -79,7 +79,8 @@ function getWeatherEmoji(weatherId){
             return "⛈️"
         case(weatherId >= 300 && weatherId < 400):
             return "🌧️"
-        
+        case(weatherId >= 400 && weatherId < 500):
+            return ""
     }
 }
 
