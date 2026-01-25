@@ -62,11 +62,12 @@ function displayWeatherInfo(data){
     cityDisplay.classList.add("cityDisplay");
     tempDisplay.classList.add("tempDisplay");
     humidityDisplay.classList.add("humidityDisplay");
-    descDisplay.classList.add("descDisplay")
+    descDisplay.classList.add("descDisplay");
 
     card.appendChild(cityDisplay);
     card.appendChild(tempDisplay);
     card.appendChild(humidityDisplay);
+    card
 }
 
 function getWeatherEmoji(weatherId){
