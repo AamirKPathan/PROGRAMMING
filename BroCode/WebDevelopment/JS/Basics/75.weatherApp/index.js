@@ -37,5 +37,5 @@ function displayError(message){
     errorDisplay.textContent = message;
     errorDisplay.classList.add("errorDisplay");
     
-    card.textContent = 
+    card.textContent = ""
 }
