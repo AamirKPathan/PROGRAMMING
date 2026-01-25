@@ -1,120 +1,88 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #87ceeb, #fefbd8);
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease;
+  color: white;
 }
 
+/* App card */
 .app {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 15px;
   text-align: center;
-  background: white;
-  padding: 2rem;
-  border-radius: 14px;
-  width: 350px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-.controls {
-  margin-bottom: 1rem;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
 input {
-  padding: 0.5rem;
-  font-size: 1rem;
-  width: 150px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 button {
-  padding: 0.5rem 1rem;
-  margin-left: 0.5rem;
-  background-color: #4caf50;
-  color: white;
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  background: #00b4d8;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
 }
 
-/* Toggle switch */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-  margin-left: 1rem;
+button:hover {
+  background: #0096c7;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+h1 {
+  margin: 10px 0;
+  font-size: 28px;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 24px;
+.temp {
+  font-size: 40px;
+  font-weight: bold;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px; width: 18px;
-  left: 3px; bottom: 3px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
+.desc {
+  text-transform: capitalize;
+  margin-bottom: 10px;
 }
 
-.switch input:checked + .slider {
-  background-color: #2196f3;
+/* 🌤 Weather themes */
+.clear {
+  background: linear-gradient(to bottom, #56ccf2, #2f80ed);
 }
 
-.switch input:checked + .slider:before {
-  transform: translateX(26px);
+.clouds {
+  background: linear-gradient(to bottom, #757f9a, #d7dde8);
 }
 
-.unit-label {
-  margin-left: 8px;
-  font-size: 0.9rem;
-}
-
-.card {
-  padding: 1rem;
-  border-radius: 12px;
-  color: #333;
-  margin-top: 1rem;
-  transition: background 0.5s ease;
-}
-
-.hidden {
-  display: none;
-}
-
-/* THEMES */
-.sunny {
-  background: linear-gradient(to bottom, #fdd835, #ff9800);
-}
-
-.cloudy {
-  background: linear-gradient(to bottom, #90a4ae, #cfd8dc);
-}
-
-.rainy {
-  background: linear-gradient(to bottom, #4fc3f7, #0288d1);
+.rain {
+  background: linear-gradient(to bottom, #373b44, #4286f4);
 }
 
 .snow {
-  background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
+  background: linear-gradient(to bottom, #83a4d4, #b6fbff);
 }
 
-.fog {
-  background: linear-gradient(to bottom, #cfd8dc, #eceff1);
+.thunderstorm {
+  background: linear-gradient(to bottom, #141e30, #243b55);
+}
+
+.mist {
+  background: linear-gradient(to bottom, #606c88, #3f4c6b);
 }
