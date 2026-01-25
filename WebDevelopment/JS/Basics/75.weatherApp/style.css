@@ -38,6 +38,7 @@ button {
   cursor: pointer;
 }
 
+/* Toggle switch */
 .switch {
   position: relative;
   display: inline-block;
@@ -72,11 +73,11 @@ button {
   border-radius: 50%;
 }
 
-input:checked + .slider {
+.switch input:checked + .slider {
   background-color: #2196f3;
 }
 
-input:checked + .slider:before {
+.switch input:checked + .slider:before {
   transform: translateX(26px);
 }
 
