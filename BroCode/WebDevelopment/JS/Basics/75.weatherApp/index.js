@@ -16,4 +16,6 @@ function displayWeatherInfo(data){
 
 }
 
-function
+function getWeatherEmoji(){
+    
+}
