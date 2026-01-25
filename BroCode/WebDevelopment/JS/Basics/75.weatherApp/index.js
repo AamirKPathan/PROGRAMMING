@@ -33,6 +33,9 @@ async function getWeatherData(city){
     const response = await fetch(apiUrl);
 
     console.log(response)
+    if(!response.ok){
+        throw
+    }
 }
 
 function displayWeatherInfo(data){
