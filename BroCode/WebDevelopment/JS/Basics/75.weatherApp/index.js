@@ -11,7 +11,10 @@ weatherForm.addEventListener("submit", event => {
     const city = cityInput.value;
 
     if(city){
-        
+
+    }
+    else{
+        displayError("Please e")
     }
 
 });
