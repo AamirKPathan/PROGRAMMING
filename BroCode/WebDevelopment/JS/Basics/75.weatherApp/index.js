@@ -62,6 +62,7 @@ function displayWeatherInfo(data){
     cityDisplay.classList.add("cityDisplay");
     tempDisplay.classList.add("tempDisplay");
     humidityDisplay.classList.add("humidityDisplay");
+    descDisplay.classList.add("descDisplay")
 
     card.appendChild(cityDisplay);
     card.appendChild(tempDisplay);
