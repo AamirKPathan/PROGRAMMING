@@ -1,17 +1,20 @@
 const apiKey = "d9fb67b12f00f7562556b5e7757f68be";
 
-let currentTempC = null;
-let isCelsius = true;
+const cityInput = document.getElementById("cityInput");
+const searchBtn = document.getElementById("searchBtn");
 
-const button = document.getElementById("btn");
-const toggleBtn = document.getElementById("unitToggle");
+const cityNameEl = document.getElementById("cityName");
+const tempEl = document.getElementById("temp");
+const descEl = document.getElementById("desc");
 
-button.addEventListener("click", getWeather);
-toggleBtn.addEventListener("click", toggleUnit);
+searchBtn.addEventListener("click", getWeather);
 
 async function getWeather() {
-  const city = document.getElementById("city").value;
-  if (!city) return alert("Enter a city name");
+  const city = cityInput.value.trim();
+  if (!city) {
+    alert("Please enter a city name");
+    return;
+  }
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
@@ -23,50 +26,12 @@ async function getWeather() {
       alert("City not found");
       return;
     }
-
-    currentTempC = data.main.temp;
-    isCelsius = true;
-
-    document.getElementById("location").textContent = data.name;
-    document.getElementById("description").textContent =
-      data.weather[0].description;
-
-    updateTemperature();
-    setWeatherTheme(data.weather[0].main.toLowerCase());
-  } catch {
-    alert("Error fetching weather");
+    
+    cityNameEl.textContent = data.name;
+    tempEl.textContent = Math.round(data.main.temp) + "°C";
+    descEl.textContent = data.weather[0].description;
+  } catch (err) {
+    console.error("Error:", err);
+    alert("Could not fetch weather");
   }
-}
-
-function toggleUnit() {
-  if (currentTempC === null) return;
-
-  isCelsius = !isCelsius;
-  updateTemperature();
-}
-
-function updateTemperature() {
-  const tempEl = document.getElementById("temperature");
-
-  if (isCelsius) {
-    tempEl.textContent = Math.round(currentTempC) + "°C";
-    toggleBtn.textContent = "°F";
-  } else {
-    const tempF = currentTempC * 9 / 5 + 32;
-    tempEl.textContent = Math.round(tempF) + "°F";
-    toggleBtn.textContent = "°C";
-  }
-}
-
-function setWeatherTheme(weather) {
-  document.body.className = "";
-
-  if (weather.includes("clear")) document.body.classList.add("clear");
-  else if (weather.includes("cloud")) document.body.classList.add("clouds");
-  else if (weather.includes("rain") || weather.includes("drizzle"))
-    document.body.classList.add("rain");
-  else if (weather.includes("snow")) document.body.classList.add("snow");
-  else if (weather.includes("thunder"))
-    document.body.classList.add("thunderstorm");
-  else document.body.classList.add("mist");
 }
