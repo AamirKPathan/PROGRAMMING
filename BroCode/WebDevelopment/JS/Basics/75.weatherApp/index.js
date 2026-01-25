@@ -56,7 +56,7 @@ function displayWeatherInfo(data){
 
     cityDisplay.textContent = city;
 
-    cityDisplay.class
+    cityDisplay.classList.add("cityDisplay")
 
     card.appendChild(cityDisplay);
 }
