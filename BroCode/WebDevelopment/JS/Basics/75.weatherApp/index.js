@@ -49,10 +49,10 @@ function displayWeatherInfo(data){
     card.style.display = "flex";
 
     const cityDisplay = document.createElement("h1");
-    const tempDisplay = document.createElement("h1");
-    const humidityDisplay = document.createElement("h1");
-    const descDisplay = document.createElement("h1");
-    const weatherEmoji = document.createElement("h1");
+    const tempDisplay = document.createElement("p");
+    const humidityDisplay = document.createElement("p");
+    const descDisplay = document.createElement("p");
+    const weatherEmoji = document.createElement("h");
 }
 
 function getWeatherEmoji(weatherId){
