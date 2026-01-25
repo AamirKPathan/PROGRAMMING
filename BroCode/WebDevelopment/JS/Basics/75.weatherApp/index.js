@@ -35,4 +35,5 @@ function displayError(message){
 
     const errorDisplay = document.createElement("p");
     errorDisplay.textContent = message;
+    errorDisplay.classList.add("error")
 }
