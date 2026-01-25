@@ -1,0 +1,15 @@
+{
+  "Dallas": {
+    "main": {
+      "temp": 7.2,
+      "humidity": 63
+    },
+    "weather": [
+      {
+        "description": "clear sky",
+        "icon": "01d"
+      }
+    ],
+    "name": "Dallas"
+  }
+}
