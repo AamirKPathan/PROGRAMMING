@@ -1,15 +1,17 @@
-const apiKey = "YOUR_API_KEY_HERE"; // <-- Put your OpenWeatherMap API key here
+const apiKey = "d9fb67b12f00f7562556b5e7757f68be";
+
+let currentTempC = null;
+let isCelsius = true;
 
 const button = document.getElementById("btn");
+const toggleBtn = document.getElementById("unitToggle");
 
 button.addEventListener("click", getWeather);
+toggleBtn.addEventListener("click", toggleUnit);
 
 async function getWeather() {
   const city = document.getElementById("city").value;
-  if (!city) {
-    alert("Please enter a city name");
-    return;
-  }
+  if (!city) return alert("Enter a city name");
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
@@ -22,15 +24,37 @@ async function getWeather() {
       return;
     }
 
+    currentTempC = data.main.temp;
+    isCelsius = true;
+
     document.getElementById("location").textContent = data.name;
-    document.getElementById("temperature").textContent =
-      Math.round(data.main.temp) + "°C";
     document.getElementById("description").textContent =
       data.weather[0].description;
 
+    updateTemperature();
     setWeatherTheme(data.weather[0].main.toLowerCase());
-  } catch (error) {
-    alert("Error fetching weather data");
+  } catch {
+    alert("Error fetching weather");
+  }
+}
+
+function toggleUnit() {
+  if (currentTempC === null) return;
+
+  isCelsius = !isCelsius;
+  updateTemperature();
+}
+
+function updateTemperature() {
+  const tempEl = document.getElementById("temperature");
+
+  if (isCelsius) {
+    tempEl.textContent = Math.round(currentTempC) + "°C";
+    toggleBtn.textContent = "°F";
+  } else {
+    const tempF = currentTempC * 9 / 5 + 32;
+    tempEl.textContent = Math.round(tempF) + "°F";
+    toggleBtn.textContent = "°C";
   }
 }
 
