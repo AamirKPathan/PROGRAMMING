@@ -39,5 +39,5 @@ button[type="submit"]:hover{
 }
 
 .card{
-    background: linear-gradient(180deg, blue, orange);
+    background: linear-gradient(180deg, hsl(210, 100), orange);
 }
