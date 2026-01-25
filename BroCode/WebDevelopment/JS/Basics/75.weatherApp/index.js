@@ -56,7 +56,7 @@ function displayWeatherInfo(data){
 
     cityDisplay.textContent = city;
 
-    card.appen
+    card.appendChild
 }
 
 function getWeatherEmoji(weatherId){
