@@ -9,5 +9,10 @@ body{
 }
 
 .weatherForm{
+    margin: 20px;
+}
+
+.cityInput{
+    padding: 10px;
     
 }
