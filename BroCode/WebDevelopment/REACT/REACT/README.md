@@ -13,4 +13,5 @@ REACT/ ← Vite React project
         Projects/ ← Practice projects
         
     lessonSelector.js  ← Controls which lesson/project runs 
-    App.jsx            ← Smart switcher main.jsx
+    App.jsx            ← Smart switcher 
+    main.jsx
