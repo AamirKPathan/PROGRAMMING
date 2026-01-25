@@ -45,7 +45,8 @@ function displayWeatherInfo(data){
         main: {temp, humidity},
         weather: [{description, id}]} = data
 
-    card.textContent
+    card.textContent = "";
+    
 }
 
 function getWeatherEmoji(weatherId){
