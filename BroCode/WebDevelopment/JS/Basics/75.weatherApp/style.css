@@ -16,5 +16,6 @@ body{
     padding: 10px;
     font-size: 2rem;
     font-weight: bold;
-    border: 2[xc];
+    border: 2px solid black;
+    border: 2px solid hsla;
 }
