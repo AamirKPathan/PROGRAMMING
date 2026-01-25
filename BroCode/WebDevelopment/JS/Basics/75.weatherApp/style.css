@@ -40,4 +40,6 @@ button[type="submit"]:hover{
 
 .card{
     background: linear-gradient(180deg, hsl(210, 100%, 75%), hsl(40, 100%, 75%));
+    padding: 50px;
+    box-shadow: 2px 2px ;
 }
