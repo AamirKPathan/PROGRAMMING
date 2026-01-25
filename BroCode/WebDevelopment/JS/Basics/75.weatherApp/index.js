@@ -15,7 +15,8 @@ weatherForm.addEventListener("submit", event => {
 
         }
         catch(error){
-
+            console.error(error);
+            
         }
     }
     else{
