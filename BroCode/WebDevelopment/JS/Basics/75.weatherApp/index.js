@@ -28,7 +28,7 @@ weatherForm.addEventListener("submit", async event => {
 
 async function getWeatherData(city){
 
-    const apiUrl = ``;
+    const apiUrl = `https://api.`;
 }
 
 function displayWeatherInfo(data){
