@@ -1,1 +1,3 @@
-// JSON NAME
+{
+    "names": ["Alice", "Bob", "Charlie", "Diana"]
+}
