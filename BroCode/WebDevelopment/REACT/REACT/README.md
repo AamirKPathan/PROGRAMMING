@@ -10,4 +10,7 @@ REACT/
 REACT/ ← Vite React project 
     src/ 
         Basics/ ← 20 BroCode lessons 
-        Projects/ ← Practice projects lessonSelector.js  ← Controls which lesson/project runs App.jsx            ← Smart switcher main.jsx
+        Projects/ ← Practice projects
+        
+    lessonSelector.js  ← Controls which lesson/project runs 
+    App.jsx            ← Smart switcher main.jsx
