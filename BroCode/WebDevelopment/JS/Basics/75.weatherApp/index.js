@@ -14,7 +14,7 @@ weatherForm.addEventListener("submit", event => {
 
     }
     else{
-        displayError("Please e")
+        displayError("Please enter a city")
     }
 
 });
