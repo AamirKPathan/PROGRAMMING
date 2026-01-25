@@ -80,5 +80,5 @@ p{
 .errorDisplay{
     font-size: 2.5rem;
     font-weight: bold;
-    hsla
+    color: hsla(0, 0%, 0%, 0.75);
 }
