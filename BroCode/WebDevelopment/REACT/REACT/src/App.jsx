@@ -1,25 +1,30 @@
-import { currentLesson, currentProject } from "./lessonSelector.js";
+import { useState, useEffect } from "react";
+import { currentLesson, currentProject, lessonFolders } from "./lessonSelector";
 
-// Dynamically import the selected lesson or project
-let SelectedComponent = () => <h1>No lesson or project selected</h1>;
+export default function App() {
+  const [Component, setComponent] = useState(() => () => <h1>Component not found</h1>);
 
-try {
-  if (currentLesson > 0) {
-    SelectedComponent = require(`./Basics/${currentLesson}.reactTutorialForBeginners/App.jsx`).default;
-  } else if (currentProject) {
-    SelectedComponent = require(`./Projects/${currentProject}/App.jsx`).default;
-  }
-} catch (error) {
-  console.error("Component load error:", error);
-  SelectedComponent = () => <h1>Component not found</h1>;
+  useEffect(() => {
+    async function load() {
+      try {
+        if (currentLesson > 0) {
+          const folder = lessonFolders[currentLesson];
+          console.log("Loading lesson folder:", folder);
+
+          const module = await import(`./Basics/${folder}/App.jsx`);
+          setComponent(() => module.default);
+        } else if (currentProject) {
+          const module = await import(`./Projects/${currentProject}/App.jsx`);
+          setComponent(() => module.default);
+        }
+      } catch (err) {
+        console.error("Load error:", err);
+        setComponent(() => () => <h1>Component not found</h1>);
+      }
+    }
+
+    load();
+  }, []);
+
+  return <Component />;
 }
-
-function App() {
-  return (
-    <div>
-      <SelectedComponent />
-    </div>
-  );
-}
-
-export default App;
