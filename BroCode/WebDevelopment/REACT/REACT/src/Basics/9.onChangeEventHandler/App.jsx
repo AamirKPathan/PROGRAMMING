@@ -7,7 +7,7 @@ function MyComponent(){
     const [name, setName] = useState("Enter Name");
 
     function handleNameChange(event){
-        setName(event.target.calue);
+        setName(event.target.value);
     }
 
     return(
