@@ -7,7 +7,7 @@ function MyComponent(){
     return(
         <div>
             <p>Name: {name}</p>
-            <button></button>
+            <button onClick={updateNa}></button>
         </div>
     )
 }
