@@ -4,10 +4,11 @@ function MyComponent(){
 
     const [name, setName] = useState();
 
+    
     return(
         <div>
             <p>Name: {name}</p>
-            <button onClick={updateNa}></button>
+            <button onClick={updateName}>Set Name: </button>
         </div>
     )
 }
