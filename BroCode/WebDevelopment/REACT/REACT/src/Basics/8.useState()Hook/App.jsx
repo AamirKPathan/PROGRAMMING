@@ -2,9 +2,10 @@
 
 // USE STATE = A REACT HOOK THAT ALLOWS THE CREATION OF A STATEFUL VARIABLE
 
-import MyComponent from
+import MyComponent from './MyComponent.jsx'
 
 function App(){
-    return(<></>)
+    return(<>
+    </>)
 }
 export default App
