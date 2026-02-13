@@ -4,7 +4,10 @@ function MyComponent(){
 
     const [name, setName] = useState();
 
-    
+    const updateName = () => {
+        name = "spo"
+    }
+
     return(
         <div>
             <p>Name: {name}</p>
