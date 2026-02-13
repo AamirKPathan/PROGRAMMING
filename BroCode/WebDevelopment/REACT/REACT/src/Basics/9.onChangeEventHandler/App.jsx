@@ -1,12 +1,5 @@
-// REACT HOOK = SPECIAL FUNCTION ALLOWING FUNCTIONAL COMPONMENTS
+// onChange = event handler used primarily with form element
 
-// USE STATE = A REACT HOOK THAT ALLOWS THE CREATION OF A STATEFUL VARIABLE
+import React, {useState} from 'react';
 
-import MyComponent from './MyComponent.jsx'
-
-function App(){
-    return(<>
-        <MyComponent/>
-    </>);
-}
-export default App
+functi
