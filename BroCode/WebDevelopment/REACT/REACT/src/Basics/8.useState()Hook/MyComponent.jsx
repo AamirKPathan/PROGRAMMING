@@ -6,7 +6,8 @@ function MyComponent(){
 
     return(
         <div>
-            <p></p>
+            <p>Name: {name}</p>
+            <button></button>
         </div>
     )
 }
