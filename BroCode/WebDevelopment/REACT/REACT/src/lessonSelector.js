@@ -1,5 +1,5 @@
-export const currentLesson = 8;
-export const currentProject = "";
+export const currentLesson = 0;
+export const currentProject = "counterProgram";
 
 export const lessonFolders = {
   1: "1.reactTutorialForBeginners",
