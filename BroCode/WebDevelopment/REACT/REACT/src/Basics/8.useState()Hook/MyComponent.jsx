@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 function MyComponent(){
 
-    const [] = useState();
+    const [name, setName] = useState();
 
 }
-export default My
+export default MyComponent
