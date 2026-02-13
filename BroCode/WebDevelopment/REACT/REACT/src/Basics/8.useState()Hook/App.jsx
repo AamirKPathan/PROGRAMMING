@@ -2,6 +2,8 @@
 
 // USE STATE = A REACT HOOK THAT ALLOWS THE CREATION OF A STATEFUL VARIABLE
 
+import MyComponent from
+
 function App(){
     return(<></>)
 }
