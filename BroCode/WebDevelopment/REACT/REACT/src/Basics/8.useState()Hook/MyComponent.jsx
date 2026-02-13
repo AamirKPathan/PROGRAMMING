@@ -2,5 +2,7 @@ import React, {useState} from 'react';
 
 function MyComponent(){
 
-    const
+    const [] = useState();
+
 }
+export default My
