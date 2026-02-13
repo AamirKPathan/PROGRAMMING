@@ -13,6 +13,6 @@ function MyComponent(){
             <p>Name: {name}</p>
             <button onClick={updateName}>Set Name: </button>
         </div>
-    )
+    );
 }
 export default MyComponent
