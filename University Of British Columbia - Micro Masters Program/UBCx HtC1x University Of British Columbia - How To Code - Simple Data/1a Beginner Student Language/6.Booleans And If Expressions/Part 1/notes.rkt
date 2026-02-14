@@ -4,4 +4,5 @@
 (> WIDTH HEIGHT)
 (= WIDTH HEIGHT)
 
-(< (image-width ))
+(< (image-width I1)
+    (image-width I2))
