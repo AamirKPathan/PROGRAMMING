@@ -5,3 +5,6 @@
 (define HEIGHT 500)
 
 (define AREA(* WIDTH HEIGHT))
+
+
+(define CAT)
