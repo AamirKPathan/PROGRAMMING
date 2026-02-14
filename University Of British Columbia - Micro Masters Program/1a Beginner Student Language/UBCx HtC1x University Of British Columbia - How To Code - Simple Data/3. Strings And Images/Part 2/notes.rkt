@@ -4,3 +4,5 @@
 (circle 10 "solid" "red")
 (circle 10 "outline" "blue")
 (rectangle 10 20 "solid" green)
+
+(text "Hel)
