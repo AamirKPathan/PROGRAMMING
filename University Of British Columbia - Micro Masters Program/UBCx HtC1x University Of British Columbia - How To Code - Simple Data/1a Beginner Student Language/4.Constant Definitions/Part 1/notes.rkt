@@ -7,4 +7,4 @@
 (define AREA(* WIDTH HEIGHT))
 
 
-(define CAT)
+(define CAT )
