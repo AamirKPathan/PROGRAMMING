@@ -5,5 +5,6 @@
 ; it is the operator
 ; the expressions that follow are operands
 
-; STEP BY STEP
-; 1. All Operands Are Reduced To V
+; STEP BY STEP Of How RKT Calculates
+; 1. All Operands Are Reduced To Value
+; 2. A
