@@ -17,4 +17,5 @@
 (substring "Lorem" 2 4)
 
 ;0 based indexing
+;Goes From the f
 (substring "0123456789" 2 4)
