@@ -7,3 +7,5 @@
 ;multiplying
 (*3 2)
 
+;dividing
+(/3 2)
