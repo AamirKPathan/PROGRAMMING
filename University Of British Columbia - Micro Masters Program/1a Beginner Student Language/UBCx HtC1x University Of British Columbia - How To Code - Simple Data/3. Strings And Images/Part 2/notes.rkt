@@ -7,4 +7,5 @@
 
 (text "Hello World" 25 "orange")
 
-(above (circle 10 "solid" "red"))
+(above (circle 10 "solid" "red")
+    (circle 10 "solid" "red"))
