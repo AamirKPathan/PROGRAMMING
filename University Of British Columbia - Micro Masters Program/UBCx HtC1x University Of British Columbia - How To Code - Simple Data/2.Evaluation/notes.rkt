@@ -10,4 +10,4 @@
 ; 2. Apply Primitive Calls To The Values
 
 (+ 2 (* 3 4) (- (+ 1 2) 3))
-(+ 2 12)
+(+ 2 12      -1)
