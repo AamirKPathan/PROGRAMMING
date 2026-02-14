@@ -9,3 +9,7 @@
 
 ;dividing
 (/3 2)
+
+;square root
+(sqrt 4)
+
