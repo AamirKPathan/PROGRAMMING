@@ -9,3 +9,6 @@
 "123"
 ;THIS IS A NUMBER
 123
+
+;lengths
+(string-len)
