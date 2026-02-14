@@ -14,4 +14,4 @@
 (string-length "apple")
 
 ;substring
-(substring "Lorem")
+(substring "Lorem" 2 4)
