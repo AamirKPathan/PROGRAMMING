@@ -4,3 +4,4 @@
 (> WIDTH HEIGHT)
 (= WIDTH HEIGHT)
 
+(< (image-width ))
