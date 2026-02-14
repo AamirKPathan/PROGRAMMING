@@ -7,4 +7,4 @@
 
 ; STEP BY STEP Of How RKT Calculates
 ; 1. All Operands Are Reduced To Value
-; 2. A
+; 2. Apply Primitive Calls To The Values
