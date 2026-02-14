@@ -5,3 +5,5 @@
 ; appending strings
 
 (string-append "Aamir Khan" " " "Pathan")
+;THIS IS A STRING 
+"1
