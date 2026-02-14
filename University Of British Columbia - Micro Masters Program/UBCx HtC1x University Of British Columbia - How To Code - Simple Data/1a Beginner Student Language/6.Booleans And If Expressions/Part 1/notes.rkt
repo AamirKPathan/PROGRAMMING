@@ -5,7 +5,7 @@
 (= WIDTH HEIGHT)
 
 (define I1(rectangle 10 20 "solid" "red"))
-(define I1(rectangle 10 10 "solid" "red"))
+(define I2(rectangle 20 10 "solid" "red"))
 
 (< (image-width I1)
-    (image-width I2))
+   (image-width I2))
