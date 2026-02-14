@@ -15,3 +15,6 @@
 
 ;substring
 (substring "Lorem" 2 4)
+
+;0 based indexing
+(substring )
