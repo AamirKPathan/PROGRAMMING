@@ -4,4 +4,6 @@
 ;subtracting
 (-3 2)
 
-;multiplying 
+;multiplying
+(*3 2)
+
