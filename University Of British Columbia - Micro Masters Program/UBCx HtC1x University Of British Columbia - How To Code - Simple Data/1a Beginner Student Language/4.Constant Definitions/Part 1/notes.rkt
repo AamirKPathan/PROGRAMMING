@@ -6,4 +6,3 @@
 
 (define AREA(* WIDTH HEIGHT))
 
-"
