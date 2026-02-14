@@ -6,4 +6,6 @@
 
 (string-append "Aamir Khan" " " "Pathan")
 ;THIS IS A STRING 
-"1
+"123"
+;THIS IS A NUMBER
+123
