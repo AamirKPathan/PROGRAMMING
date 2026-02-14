@@ -11,4 +11,7 @@
 123
 
 ;lengths
-(string-len)
+(string-length "apple")
+
+;substring
+(s)
