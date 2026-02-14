@@ -1,2 +1,2 @@
 ; images
-(require )
+(require 2htdp/image)
