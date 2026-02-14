@@ -5,5 +5,3 @@
 (define HEIGHT 500)
 
 (define AREA(* WIDTH HEIGHT))
-
-AREA
