@@ -3,4 +3,6 @@
 
 ; the opening sign of a bracket pair is the primitive call
 ; it is the operator
-; the expr
+; the expressions that follow are operands
+
+; for example for the 
