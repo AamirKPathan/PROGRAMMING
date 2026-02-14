@@ -3,4 +3,4 @@
 
 (circle 10 "solid" "red")
 (circle 10 "outline" "blue")
-(rectan)
+(rectangle 10 20 "solid" green)
