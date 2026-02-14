@@ -5,4 +5,4 @@
 ; it is the operator
 ; the expressions that follow are operands
 
-; for example for the 
+; S
