@@ -8,5 +8,6 @@
 (text "Hello World" 25 "orange")
 
 (above (circle 10 "solid" "red")
-       (circle 20 "solid" "gre")
-       (circle 10 "solid" "red"))
+       (circle 20 "solid" "green")
+       (circle 30 "solid" "blue"))
+
