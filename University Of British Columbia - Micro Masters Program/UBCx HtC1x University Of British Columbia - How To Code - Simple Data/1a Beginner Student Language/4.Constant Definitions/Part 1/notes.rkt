@@ -2,4 +2,5 @@
 
 ;constants
 (define WIDTH 400)
-(defin)
+(define HEIGHT 500)
+
