@@ -1,2 +1,4 @@
 (define WIDTH 100)
-(define HEIGHT 10)
+(define HEIGHT 100)
+(> WIDTH HEIGHT)
+(> WIDTH HEIGHT)
