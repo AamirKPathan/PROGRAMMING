@@ -5,4 +5,5 @@
 ; it is the operator
 ; the expressions that follow are operands
 
-; S
+; STEP BY STEP
+; 
