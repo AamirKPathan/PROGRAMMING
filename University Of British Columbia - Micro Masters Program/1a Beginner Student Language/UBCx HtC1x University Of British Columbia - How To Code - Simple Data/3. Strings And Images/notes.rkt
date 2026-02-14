@@ -17,5 +17,5 @@
 (substring "Lorem" 2 4)
 
 ;0 based indexing
-;Goes From the first number up to but not including th
+;Goes From the first number up to but not including the last
 (substring "0123456789" 2 4)
