@@ -13,3 +13,5 @@
 ;square root
 (sqrt 4)
 
+;square
+(sqr 2)
