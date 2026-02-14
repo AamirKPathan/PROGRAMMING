@@ -4,4 +4,4 @@
 
 ; appending strings
 
-(string-append)
+(string-append "Aamir Khan" " " )
