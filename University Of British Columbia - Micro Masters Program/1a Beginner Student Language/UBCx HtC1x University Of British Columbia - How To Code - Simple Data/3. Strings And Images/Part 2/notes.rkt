@@ -13,4 +13,5 @@
 
 (overlay (circle 10 "solid" "red")
          (circle 20 "solid" "green")
-         (circle 30 "solid" "blue"))
+         (circle 30 "solid" "blue")
+         (circle 30 "solid" "yellow"))
