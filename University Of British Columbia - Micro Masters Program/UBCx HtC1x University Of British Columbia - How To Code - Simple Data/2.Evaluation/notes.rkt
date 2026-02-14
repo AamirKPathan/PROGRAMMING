@@ -6,4 +6,4 @@
 ; the expressions that follow are operands
 
 ; STEP BY STEP
-; 
+; 1. All Operands Are Reduced To V
