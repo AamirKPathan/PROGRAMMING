@@ -9,7 +9,6 @@
 (define I2(rectangle 20 10 "solid" "red"))
 
 (if(< (image-width I1)
-      (image-height I1)
+      (image-height I1))
       "tall"
-      "wide"
-      ))
+      "wide")
