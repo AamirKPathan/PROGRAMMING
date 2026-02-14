@@ -4,3 +4,4 @@
 (define WIDTH 400)
 (define HEIGHT 500)
 
+(* WIDTH HEIGHT)
